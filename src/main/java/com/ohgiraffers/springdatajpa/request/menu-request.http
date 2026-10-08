@@ -1,0 +1,85 @@
+### 1. 전체 메뉴 조회
+# 모든 메뉴 목록을 조회. 응답은 ResponseMessage 형식으로 반환됨.
+GET http://localhost:8080/api/menus
+Accept: application/json
+
+### 2. 페이징 처리된 메뉴 조회 (페이지 번호와 사이즈 지정)
+# 페이징 처리된 메뉴 목록을 조회. page와 size 매개변수로 페이지 정보를 지정할 수 있음.
+# one-indexed-parameters 설정에 의해 page는 1부터 시작한다. (첫 페이지가 page=1)
+GET http://localhost:8080/api/menus/pages?page=1&size=5
+#GET http://localhost:8080/api/menus/pages?page=4&size=5
+Accept: application/json
+
+### 2-1. 페이징 처리 및 정렬이 적용된 메뉴 조회 (가격 오름차순)
+# 페이징 처리와 정렬이 함께 적용된 메뉴 목록을 조회. 메뉴 가격을 기준으로 오름차순 정렬됨.
+GET http://localhost:8080/api/menus/pages/sort?page=1&size=5&sortBy=menuPrice&direction=asc
+Accept: application/json
+
+### 2-2. 페이징 처리 및 정렬이 적용된 메뉴 조회 (가격 내림차순)
+# 페이징 처리와 정렬이 함께 적용된 메뉴 목록을 조회. 메뉴 가격을 기준으로 내림차순 정렬됨.
+GET http://localhost:8080/api/menus/pages/sort?page=1&size=5&sortBy=menuPrice&direction=desc
+Accept: application/json
+
+### 2-3. 페이징 처리 및 정렬이 적용된 메뉴 조회 (메뉴 이름 기준)
+# 페이징 처리와 정렬이 함께 적용된 메뉴 목록을 조회. 메뉴 이름을 기준으로 정렬됨.
+GET http://localhost:8080/api/menus/pages/sort?page=1&size=5&sortBy=menuName&direction=asc
+Accept: application/json
+
+### 3. 단일 메뉴 조회 (메뉴 코드로 조회, 1번 메뉴)
+# 특정 메뉴 코드에 해당하는 메뉴 정보를 조회.
+GET http://localhost:8080/api/menus/1
+Accept: application/json
+
+### 4. 가격 기준 메뉴 검색 (7000원 초과 메뉴 조회)
+# 지정된 가격을 초과하는 메뉴 목록을 조회.
+GET http://localhost:8080/api/menus/search?menuPrice=7000
+Accept: application/json
+
+### 5. 새 메뉴 등록
+# 새로운 메뉴를 등록. 응답은 등록된 메뉴 정보를 포함함.
+POST http://localhost:8080/api/menus
+Content-Type: application/json
+
+{
+  "menuName": "치즈폭탄 치즈피자",
+  "menuPrice": 15000,
+  "categoryCode": 12,
+  "orderableStatus": "Y"
+}
+
+### 6. 메뉴 수정 (1번 메뉴 수정)
+# 특정 메뉴 정보를 수정. 응답은 수정된 메뉴 정보를 포함함.
+PUT http://localhost:8080/api/menus/1
+Content-Type: application/json
+
+{
+  "menuName": "페퍼로니폭탄 페퍼로니피자",
+  "menuPrice": 12000,
+  "categoryCode": 12,
+  "orderableStatus": "Y"
+}
+
+### 7. 메뉴 삭제 (1번 메뉴 삭제)
+# 특정 메뉴를 삭제. 응답은 삭제된 메뉴 코드 정보를 포함함.
+DELETE http://localhost:8080/api/menus/1
+
+### 8. (예외) 존재하지 않는 메뉴 조회 -> 404 Not Found
+# ExceptionController가 MenuNotFoundException을 가로채 ErrorResponse 형태로 응답한다.
+# 전역 예외 처리기가 없다면 이 요청은 500(Internal Server Error)이 되었을 것이다.
+GET http://localhost:8080/api/menus/9999
+Accept: application/json
+
+### 9. (예외) 존재하지 않는 카테고리 코드로 메뉴 등록 -> 400 Bad Request
+# 자원이 없는 것(404)이 아니라 요청에 담긴 값이 잘못된 경우이므로 400으로 응답한다.
+POST http://localhost:8080/api/menus
+Content-Type: application/json
+
+{
+  "menuName": "없는카테고리메뉴",
+  "menuPrice": 10000,
+  "categoryCode": 9999,
+  "orderableStatus": "Y"
+}
+
+### 10. (예외) 존재하지 않는 메뉴 삭제 -> 404 Not Found
+DELETE http://localhost:8080/api/menus/9999

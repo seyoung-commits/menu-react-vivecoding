@@ -1,0 +1,50 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '4.1.1'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.ohgiraffers'
+version = '0.0.1-SNAPSHOT'
+
+/* 설명. 수업은 Java 17 기준으로 진행한다.
+ *  아래 languageVersion 값을 21로 바꾸기만 하면 Java 21로 즉시 전환된다.
+ *  (IntelliJ에서는 Settings > Build, Execution, Deployment > Build Tools > Gradle의
+ *   "Gradle JVM" 값도 함께 21로 맞춰주면 된다)
+ *  ----------------------------------------------------------------------------------
+ *  Java 21로 전환한 뒤 application.yaml에 아래 설정을 추가하면 가상 스레드를 사용할 수 있다.
+ *  spring:
+ *    threads:
+ *      virtual:
+ *        enabled: true
+ * */
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+/* 설명. 버전을 명시하지 않은 의존성은 Spring Boot(4.1.1)가 관리해주는 버전이 자동 적용된다.
+ *  주요 적용 버전: Hibernate 7.4.5, mysql-connector-j 9.7.0, JUnit Jupiter 6.0.3, Jackson 3.1.5
+ * */
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    /* 설명. Spring Boot 4부터 Spring MVC용 스타터 이름이 starter-web에서 starter-webmvc로 바뀌었다. */
+    implementation 'org.springframework.boot:spring-boot-starter-webmvc'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:3.1.0'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'com.mysql:mysql-connector-j'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

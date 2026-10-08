@@ -1,0 +1,28 @@
+### 1. 모든 카테고리 조회
+# 모든 카테고리 정보를 조회. 계층 구조(상위-하위 카테고리)와 함께 조회됨.
+# 응답은 ResponseMessage 형식으로 반환됨.
+GET http://localhost:8080/api/categories
+Accept: application/json
+
+### 2. 특정 카테고리 조회 (카테고리 코드로 조회, 1번 카테고리)
+# 특정 카테고리에 대한 상세 정보를 조회. 상위 카테고리 정보도 포함됨.
+# 응답은 ResponseMessage 형식으로 반환됨.
+GET http://localhost:8080/api/categories/1
+Accept: application/json
+
+### 3. 특정 카테고리 조회 (카테고리 코드로 조회, 4번 카테고리)
+# 4번 카테고리(한식)에 대한 상세 정보를 조회. 상위 카테고리(식사) 정보도 포함됨.
+# 응답은 ResponseMessage 형식으로 반환됨.
+GET http://localhost:8080/api/categories/4
+Accept: application/json
+
+### 4. 특정 카테고리 조회 (카테고리 코드로 조회, 8번 카테고리)
+# 8번 카테고리(커피)에 대한 상세 정보를 조회. 상위 카테고리(음료) 정보도 포함됨.
+# 응답은 ResponseMessage 형식으로 반환됨.
+GET http://localhost:8080/api/categories/8
+Accept: application/json
+
+### 5. (예외) 존재하지 않는 카테고리 조회 -> 404 Not Found
+# ExceptionController가 CategoryNotFoundException을 가로채 ErrorResponse 형태로 응답한다.
+GET http://localhost:8080/api/categories/9999
+Accept: application/json

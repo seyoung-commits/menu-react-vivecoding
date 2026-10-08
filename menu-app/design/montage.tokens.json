@@ -1,0 +1,2238 @@
+{
+  "metadata": {
+    "sourceRoot": "montage-web-main/montage-web-main",
+    "sourceRootRelativeTo": "vibe-design-test",
+    "valuePolicy": "모든 디자인 값은 로컬 TypeScript 원본을 평가하여 추출했습니다. rem, em, px 단위를 원본 그대로 보존했습니다.",
+    "usagePolicy": "usage는 원본 토큰 이름과 분류를 바탕으로 작성한 한국어 용도 설명이며 공식 문서의 인용문이 아닙니다. atomic 팔레트에는 특정 UI 역할을 임의 배정하지 않았습니다.",
+    "namingPolicy": "각 그룹 안의 키는 원본 토큰 경로입니다. 토큰 식별자는 JSON 그룹 경로와 키를 결합합니다. light/dark에서 같은 semantic 경로를 쓰는 것은 의도된 테마 대응입니다.",
+    "alpha": {
+      "source": "packages/wds-theme/src/utils/index.ts#addHexOpacity",
+      "expression": "hex.substring(0, 7) + Math.round(value * 255).toString(16).padStart(2, '0').toUpperCase()",
+      "format": "#RRGGBBAA",
+      "note": "원본 addHexOpacity를 직접 실행했습니다. 배경색과 합성하거나 알파를 다른 방식으로 반올림하지 않았습니다."
+    },
+    "colorCountPolicy": "독립 HEX 색상 토큰만 집계합니다. 공통 atomic은 한 번, semantic은 light/dark 각각 집계합니다. 그림자와 플랫폼 CSS 안에 포함된 색상은 별도 색상 토큰으로 세지 않습니다.",
+    "validation": {
+      "atomicColors": 166,
+      "lightSemanticColors": 62,
+      "darkSemanticColors": 62,
+      "totalColorEntries": 290,
+      "distinctHexValues": 204,
+      "translucentSemanticColors": {
+        "light": 22,
+        "dark": 22
+      },
+      "typographyVariants": 19,
+      "spacingTokens": 20,
+      "totalTokenEntries": 376,
+      "duplicateQualifiedNames": 0
+    },
+    "sources": {
+      "packages/wds-theme/src/theme/atomic/blue.ts": {
+        "sha256": "e662a3d2af22135396600e2d62b8a82faa0472204464b32ab6977e9c4ba405dd"
+      },
+      "packages/wds-theme/src/theme/atomic/common.ts": {
+        "sha256": "59a17c735a37a01cf2a0515234ec2b46a83c473f556f29c006416c3a84f20b3d"
+      },
+      "packages/wds-theme/src/theme/atomic/coolNeutral.ts": {
+        "sha256": "36560cf6141689c324493a96ea89e63f7095c61ba1830aeb8ddda5ae439921e6"
+      },
+      "packages/wds-theme/src/theme/atomic/cyan.ts": {
+        "sha256": "46a7cd4b52b6eaaa5354d5cda1c518509a684153cc688e9ffe8689e205a260d4"
+      },
+      "packages/wds-theme/src/theme/atomic/green.ts": {
+        "sha256": "cf5bd9f90c484f81c9575cf2301b2d3ad42481e16e014843ad3f66738bedccda"
+      },
+      "packages/wds-theme/src/theme/atomic/index.ts": {
+        "sha256": "d8166074b356e9b73abc2a9bbcf90c1eb8fe596be8ae93562200d33d51fd1e0e"
+      },
+      "packages/wds-theme/src/theme/atomic/lightBlue.ts": {
+        "sha256": "fbac8881d8613aa4e81e58b79f0784afae2ebd577bd2ef72b87b567d6a21081a"
+      },
+      "packages/wds-theme/src/theme/atomic/lime.ts": {
+        "sha256": "c55c7a81b438aa2f16248282273b5d9307bb1737322672cb339439f25232be58"
+      },
+      "packages/wds-theme/src/theme/atomic/neutral.ts": {
+        "sha256": "77b23e8e4b95f09275325a8237e5ee874d9addcb504a3cf510bf8e395803d04c"
+      },
+      "packages/wds-theme/src/theme/atomic/orange.ts": {
+        "sha256": "a2dda854465bdbeb7676f39a90234f860dc52a520dde1de4b69d8f94a2893de8"
+      },
+      "packages/wds-theme/src/theme/atomic/pink.ts": {
+        "sha256": "65566ba1db4546fc314e6ca66dce0aed0349e7e42d975f54b6dde665b3090c7b"
+      },
+      "packages/wds-theme/src/theme/atomic/purple.ts": {
+        "sha256": "a06f4342287bb2cd2acd54730ae0f1e03f228eafe31ad994d12db7c01af3c9d5"
+      },
+      "packages/wds-theme/src/theme/atomic/red.ts": {
+        "sha256": "2fc06f2711aafc0384daf5bc790b1945d8c81e9729209a1d07c974f69101bbc9"
+      },
+      "packages/wds-theme/src/theme/atomic/redOrange.ts": {
+        "sha256": "c50edfecaeed27dd9d4f791a1e99c205d364193d10174309a5dd233e150c0b30"
+      },
+      "packages/wds-theme/src/theme/atomic/violet.ts": {
+        "sha256": "bec710323dd2a2108db5b2cf37c99698317ffe3ab000649b445d809fb349ac26"
+      },
+      "packages/wds-theme/src/theme/breakpoint/index.ts": {
+        "sha256": "072fab67c6b56dc77be7e9140370fd6d11baad1d38c91f73ad017e5060f25fe1"
+      },
+      "packages/wds-theme/src/theme/index.ts": {
+        "sha256": "37d7736385f421358fa8621f9097334d8644fe30aec871ab85475776748f508b"
+      },
+      "packages/wds-theme/src/theme/opacity/index.ts": {
+        "sha256": "237825aee7f22fb9373050dc1d54a2dda8ecc65eb82dac66d2a2f19b0bcbb43b"
+      },
+      "packages/wds-theme/src/theme/semantic/index.ts": {
+        "sha256": "dadb289648bc2c3da7b6637168cc141f8d46cf8333c8f692c68b4f32cbaba16e"
+      },
+      "packages/wds-theme/src/theme/spacing/index.ts": {
+        "sha256": "ed67e0f1546a0d53c7c20857f074625c17f533bf7305650e42620f4af8d4a018"
+      },
+      "packages/wds-theme/src/theme/z-index/index.ts": {
+        "sha256": "57f78bd9d8d8f425043eedb638cfe10ad59a943453ffe9831c796779276c78cb"
+      },
+      "packages/wds-theme/src/utils/index.ts": {
+        "sha256": "c5c71c160d0688a7419d4855813e866ab7fb440d95414c142dde4e44eb4c71a9"
+      },
+      "packages/wds/src/components/typography/style.ts": {
+        "sha256": "566e281fdd0bc1af5154a28a4fce694924982461eadbcef8f9492731101f6834"
+      },
+      "packages/wds/src/components/typography/types.ts": {
+        "sha256": "c4e126d1d59b75e6729cde796480ea89a2ebc8802199cd131296fe54e3b3a68d"
+      }
+    }
+  },
+  "colors": {
+    "atomic": {
+      "atomic.blue.10": {
+        "value": "#001536",
+        "usage": "파랑 팔레트 10 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/blue.ts"
+      },
+      "atomic.blue.20": {
+        "value": "#002966",
+        "usage": "파랑 팔레트 20 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/blue.ts"
+      },
+      "atomic.blue.30": {
+        "value": "#003E9C",
+        "usage": "파랑 팔레트 30 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/blue.ts"
+      },
+      "atomic.blue.40": {
+        "value": "#0054D1",
+        "usage": "파랑 팔레트 40 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/blue.ts"
+      },
+      "atomic.blue.45": {
+        "value": "#005EEB",
+        "usage": "파랑 팔레트 45 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/blue.ts"
+      },
+      "atomic.blue.50": {
+        "value": "#0066FF",
+        "usage": "파랑 팔레트 50 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/blue.ts"
+      },
+      "atomic.blue.55": {
+        "value": "#1A75FF",
+        "usage": "파랑 팔레트 55 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/blue.ts"
+      },
+      "atomic.blue.60": {
+        "value": "#3385FF",
+        "usage": "파랑 팔레트 60 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/blue.ts"
+      },
+      "atomic.blue.65": {
+        "value": "#4F95FF",
+        "usage": "파랑 팔레트 65 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/blue.ts"
+      },
+      "atomic.blue.70": {
+        "value": "#69A5FF",
+        "usage": "파랑 팔레트 70 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/blue.ts"
+      },
+      "atomic.blue.80": {
+        "value": "#9EC5FF",
+        "usage": "파랑 팔레트 80 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/blue.ts"
+      },
+      "atomic.blue.90": {
+        "value": "#C9DEFE",
+        "usage": "파랑 팔레트 90 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/blue.ts"
+      },
+      "atomic.blue.95": {
+        "value": "#EAF2FE",
+        "usage": "파랑 팔레트 95 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/blue.ts"
+      },
+      "atomic.blue.99": {
+        "value": "#F7FBFF",
+        "usage": "파랑 팔레트 99 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/blue.ts"
+      },
+      "atomic.common.0": {
+        "value": "#000000",
+        "usage": "공통 흑백 팔레트 0 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/common.ts"
+      },
+      "atomic.common.100": {
+        "value": "#ffffff",
+        "usage": "공통 흑백 팔레트 100 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/common.ts"
+      },
+      "atomic.coolNeutral.5": {
+        "value": "#0F0F10",
+        "usage": "차가운 중립색 팔레트 5 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/coolNeutral.ts"
+      },
+      "atomic.coolNeutral.7": {
+        "value": "#141415",
+        "usage": "차가운 중립색 팔레트 7 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/coolNeutral.ts"
+      },
+      "atomic.coolNeutral.10": {
+        "value": "#171719",
+        "usage": "차가운 중립색 팔레트 10 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/coolNeutral.ts"
+      },
+      "atomic.coolNeutral.15": {
+        "value": "#1B1C1E",
+        "usage": "차가운 중립색 팔레트 15 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/coolNeutral.ts"
+      },
+      "atomic.coolNeutral.17": {
+        "value": "#212225",
+        "usage": "차가운 중립색 팔레트 17 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/coolNeutral.ts"
+      },
+      "atomic.coolNeutral.20": {
+        "value": "#292A2D",
+        "usage": "차가운 중립색 팔레트 20 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/coolNeutral.ts"
+      },
+      "atomic.coolNeutral.22": {
+        "value": "#2E2F33",
+        "usage": "차가운 중립색 팔레트 22 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/coolNeutral.ts"
+      },
+      "atomic.coolNeutral.23": {
+        "value": "#333438",
+        "usage": "차가운 중립색 팔레트 23 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/coolNeutral.ts"
+      },
+      "atomic.coolNeutral.25": {
+        "value": "#37383C",
+        "usage": "차가운 중립색 팔레트 25 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/coolNeutral.ts"
+      },
+      "atomic.coolNeutral.30": {
+        "value": "#46474C",
+        "usage": "차가운 중립색 팔레트 30 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/coolNeutral.ts"
+      },
+      "atomic.coolNeutral.40": {
+        "value": "#5A5C63",
+        "usage": "차가운 중립색 팔레트 40 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/coolNeutral.ts"
+      },
+      "atomic.coolNeutral.50": {
+        "value": "#70737C",
+        "usage": "차가운 중립색 팔레트 50 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/coolNeutral.ts"
+      },
+      "atomic.coolNeutral.60": {
+        "value": "#878A93",
+        "usage": "차가운 중립색 팔레트 60 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/coolNeutral.ts"
+      },
+      "atomic.coolNeutral.70": {
+        "value": "#989BA2",
+        "usage": "차가운 중립색 팔레트 70 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/coolNeutral.ts"
+      },
+      "atomic.coolNeutral.80": {
+        "value": "#AEB0B6",
+        "usage": "차가운 중립색 팔레트 80 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/coolNeutral.ts"
+      },
+      "atomic.coolNeutral.90": {
+        "value": "#C2C4C8",
+        "usage": "차가운 중립색 팔레트 90 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/coolNeutral.ts"
+      },
+      "atomic.coolNeutral.95": {
+        "value": "#DBDCDF",
+        "usage": "차가운 중립색 팔레트 95 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/coolNeutral.ts"
+      },
+      "atomic.coolNeutral.96": {
+        "value": "#E1E2E4",
+        "usage": "차가운 중립색 팔레트 96 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/coolNeutral.ts"
+      },
+      "atomic.coolNeutral.97": {
+        "value": "#EAEBEC",
+        "usage": "차가운 중립색 팔레트 97 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/coolNeutral.ts"
+      },
+      "atomic.coolNeutral.98": {
+        "value": "#F4F4F5",
+        "usage": "차가운 중립색 팔레트 98 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/coolNeutral.ts"
+      },
+      "atomic.coolNeutral.99": {
+        "value": "#F7F7F8",
+        "usage": "차가운 중립색 팔레트 99 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/coolNeutral.ts"
+      },
+      "atomic.cyan.10": {
+        "value": "#00252B",
+        "usage": "청록 팔레트 10 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/cyan.ts"
+      },
+      "atomic.cyan.20": {
+        "value": "#004854",
+        "usage": "청록 팔레트 20 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/cyan.ts"
+      },
+      "atomic.cyan.30": {
+        "value": "#006F82",
+        "usage": "청록 팔레트 30 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/cyan.ts"
+      },
+      "atomic.cyan.40": {
+        "value": "#0098B2",
+        "usage": "청록 팔레트 40 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/cyan.ts"
+      },
+      "atomic.cyan.50": {
+        "value": "#00BDDE",
+        "usage": "청록 팔레트 50 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/cyan.ts"
+      },
+      "atomic.cyan.60": {
+        "value": "#28D0ED",
+        "usage": "청록 팔레트 60 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/cyan.ts"
+      },
+      "atomic.cyan.70": {
+        "value": "#57DFF7",
+        "usage": "청록 팔레트 70 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/cyan.ts"
+      },
+      "atomic.cyan.80": {
+        "value": "#8AEDFF",
+        "usage": "청록 팔레트 80 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/cyan.ts"
+      },
+      "atomic.cyan.90": {
+        "value": "#B5F4FF",
+        "usage": "청록 팔레트 90 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/cyan.ts"
+      },
+      "atomic.cyan.95": {
+        "value": "#DEFAFF",
+        "usage": "청록 팔레트 95 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/cyan.ts"
+      },
+      "atomic.cyan.99": {
+        "value": "#F7FEFF",
+        "usage": "청록 팔레트 99 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/cyan.ts"
+      },
+      "atomic.green.10": {
+        "value": "#00240C",
+        "usage": "초록 팔레트 10 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/green.ts"
+      },
+      "atomic.green.20": {
+        "value": "#004517",
+        "usage": "초록 팔레트 20 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/green.ts"
+      },
+      "atomic.green.30": {
+        "value": "#006E25",
+        "usage": "초록 팔레트 30 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/green.ts"
+      },
+      "atomic.green.40": {
+        "value": "#009632",
+        "usage": "초록 팔레트 40 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/green.ts"
+      },
+      "atomic.green.50": {
+        "value": "#00BF40",
+        "usage": "초록 팔레트 50 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/green.ts"
+      },
+      "atomic.green.60": {
+        "value": "#1ED45A",
+        "usage": "초록 팔레트 60 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/green.ts"
+      },
+      "atomic.green.70": {
+        "value": "#49E57D",
+        "usage": "초록 팔레트 70 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/green.ts"
+      },
+      "atomic.green.80": {
+        "value": "#7DF5A5",
+        "usage": "초록 팔레트 80 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/green.ts"
+      },
+      "atomic.green.90": {
+        "value": "#ACFCC7",
+        "usage": "초록 팔레트 90 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/green.ts"
+      },
+      "atomic.green.95": {
+        "value": "#D9FFE6",
+        "usage": "초록 팔레트 95 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/green.ts"
+      },
+      "atomic.green.99": {
+        "value": "#F2FFF6",
+        "usage": "초록 팔레트 99 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/green.ts"
+      },
+      "atomic.lightBlue.10": {
+        "value": "#002130",
+        "usage": "밝은 파랑 팔레트 10 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/lightBlue.ts"
+      },
+      "atomic.lightBlue.20": {
+        "value": "#004261",
+        "usage": "밝은 파랑 팔레트 20 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/lightBlue.ts"
+      },
+      "atomic.lightBlue.30": {
+        "value": "#006796",
+        "usage": "밝은 파랑 팔레트 30 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/lightBlue.ts"
+      },
+      "atomic.lightBlue.40": {
+        "value": "#008DCF",
+        "usage": "밝은 파랑 팔레트 40 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/lightBlue.ts"
+      },
+      "atomic.lightBlue.50": {
+        "value": "#00AEFF",
+        "usage": "밝은 파랑 팔레트 50 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/lightBlue.ts"
+      },
+      "atomic.lightBlue.60": {
+        "value": "#3DC2FF",
+        "usage": "밝은 파랑 팔레트 60 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/lightBlue.ts"
+      },
+      "atomic.lightBlue.70": {
+        "value": "#70D2FF",
+        "usage": "밝은 파랑 팔레트 70 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/lightBlue.ts"
+      },
+      "atomic.lightBlue.80": {
+        "value": "#A1E1FF",
+        "usage": "밝은 파랑 팔레트 80 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/lightBlue.ts"
+      },
+      "atomic.lightBlue.90": {
+        "value": "#C4ECFE",
+        "usage": "밝은 파랑 팔레트 90 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/lightBlue.ts"
+      },
+      "atomic.lightBlue.95": {
+        "value": "#E5F6FE",
+        "usage": "밝은 파랑 팔레트 95 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/lightBlue.ts"
+      },
+      "atomic.lightBlue.99": {
+        "value": "#F7FDFF",
+        "usage": "밝은 파랑 팔레트 99 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/lightBlue.ts"
+      },
+      "atomic.lime.10": {
+        "value": "#112900",
+        "usage": "라임 팔레트 10 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/lime.ts"
+      },
+      "atomic.lime.20": {
+        "value": "#225200",
+        "usage": "라임 팔레트 20 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/lime.ts"
+      },
+      "atomic.lime.30": {
+        "value": "#347D00",
+        "usage": "라임 팔레트 30 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/lime.ts"
+      },
+      "atomic.lime.37": {
+        "value": "#429E00",
+        "usage": "라임 팔레트 37 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/lime.ts"
+      },
+      "atomic.lime.40": {
+        "value": "#48AD00",
+        "usage": "라임 팔레트 40 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/lime.ts"
+      },
+      "atomic.lime.50": {
+        "value": "#58CF04",
+        "usage": "라임 팔레트 50 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/lime.ts"
+      },
+      "atomic.lime.60": {
+        "value": "#6BE016",
+        "usage": "라임 팔레트 60 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/lime.ts"
+      },
+      "atomic.lime.70": {
+        "value": "#88F03E",
+        "usage": "라임 팔레트 70 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/lime.ts"
+      },
+      "atomic.lime.80": {
+        "value": "#AEF779",
+        "usage": "라임 팔레트 80 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/lime.ts"
+      },
+      "atomic.lime.90": {
+        "value": "#CCFCA9",
+        "usage": "라임 팔레트 90 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/lime.ts"
+      },
+      "atomic.lime.95": {
+        "value": "#E6FFD4",
+        "usage": "라임 팔레트 95 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/lime.ts"
+      },
+      "atomic.lime.99": {
+        "value": "#F8FFF2",
+        "usage": "라임 팔레트 99 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/lime.ts"
+      },
+      "atomic.neutral.5": {
+        "value": "#0F0F0F",
+        "usage": "중립색 팔레트 5 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/neutral.ts"
+      },
+      "atomic.neutral.10": {
+        "value": "#171717",
+        "usage": "중립색 팔레트 10 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/neutral.ts"
+      },
+      "atomic.neutral.15": {
+        "value": "#1C1C1C",
+        "usage": "중립색 팔레트 15 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/neutral.ts"
+      },
+      "atomic.neutral.20": {
+        "value": "#2A2A2A",
+        "usage": "중립색 팔레트 20 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/neutral.ts"
+      },
+      "atomic.neutral.22": {
+        "value": "#303030",
+        "usage": "중립색 팔레트 22 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/neutral.ts"
+      },
+      "atomic.neutral.30": {
+        "value": "#474747",
+        "usage": "중립색 팔레트 30 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/neutral.ts"
+      },
+      "atomic.neutral.40": {
+        "value": "#5C5C5C",
+        "usage": "중립색 팔레트 40 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/neutral.ts"
+      },
+      "atomic.neutral.50": {
+        "value": "#737373",
+        "usage": "중립색 팔레트 50 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/neutral.ts"
+      },
+      "atomic.neutral.60": {
+        "value": "#8A8A8A",
+        "usage": "중립색 팔레트 60 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/neutral.ts"
+      },
+      "atomic.neutral.70": {
+        "value": "#9B9B9B",
+        "usage": "중립색 팔레트 70 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/neutral.ts"
+      },
+      "atomic.neutral.80": {
+        "value": "#B0B0B0",
+        "usage": "중립색 팔레트 80 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/neutral.ts"
+      },
+      "atomic.neutral.90": {
+        "value": "#C4C4C4",
+        "usage": "중립색 팔레트 90 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/neutral.ts"
+      },
+      "atomic.neutral.95": {
+        "value": "#DCDCDC",
+        "usage": "중립색 팔레트 95 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/neutral.ts"
+      },
+      "atomic.neutral.99": {
+        "value": "#F7F7F7",
+        "usage": "중립색 팔레트 99 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/neutral.ts"
+      },
+      "atomic.orange.10": {
+        "value": "#361E00",
+        "usage": "주황 팔레트 10 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/orange.ts"
+      },
+      "atomic.orange.20": {
+        "value": "#663A00",
+        "usage": "주황 팔레트 20 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/orange.ts"
+      },
+      "atomic.orange.30": {
+        "value": "#9C5800",
+        "usage": "주황 팔레트 30 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/orange.ts"
+      },
+      "atomic.orange.39": {
+        "value": "#D17600",
+        "usage": "주황 팔레트 39 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/orange.ts"
+      },
+      "atomic.orange.40": {
+        "value": "#D47800",
+        "usage": "주황 팔레트 40 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/orange.ts"
+      },
+      "atomic.orange.50": {
+        "value": "#FF9200",
+        "usage": "주황 팔레트 50 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/orange.ts"
+      },
+      "atomic.orange.60": {
+        "value": "#FFA938",
+        "usage": "주황 팔레트 60 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/orange.ts"
+      },
+      "atomic.orange.70": {
+        "value": "#FFC06E",
+        "usage": "주황 팔레트 70 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/orange.ts"
+      },
+      "atomic.orange.80": {
+        "value": "#FFD49C",
+        "usage": "주황 팔레트 80 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/orange.ts"
+      },
+      "atomic.orange.90": {
+        "value": "#FEE6C6",
+        "usage": "주황 팔레트 90 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/orange.ts"
+      },
+      "atomic.orange.95": {
+        "value": "#FEF4E6",
+        "usage": "주황 팔레트 95 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/orange.ts"
+      },
+      "atomic.orange.99": {
+        "value": "#FFFCF7",
+        "usage": "주황 팔레트 99 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/orange.ts"
+      },
+      "atomic.pink.10": {
+        "value": "#3D0133",
+        "usage": "분홍 팔레트 10 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/pink.ts"
+      },
+      "atomic.pink.20": {
+        "value": "#730560",
+        "usage": "분홍 팔레트 20 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/pink.ts"
+      },
+      "atomic.pink.30": {
+        "value": "#A81690",
+        "usage": "분홍 팔레트 30 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/pink.ts"
+      },
+      "atomic.pink.40": {
+        "value": "#D331B8",
+        "usage": "분홍 팔레트 40 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/pink.ts"
+      },
+      "atomic.pink.46": {
+        "value": "#E846CD",
+        "usage": "분홍 팔레트 46 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/pink.ts"
+      },
+      "atomic.pink.50": {
+        "value": "#F553DA",
+        "usage": "분홍 팔레트 50 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/pink.ts"
+      },
+      "atomic.pink.60": {
+        "value": "#FA73E3",
+        "usage": "분홍 팔레트 60 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/pink.ts"
+      },
+      "atomic.pink.70": {
+        "value": "#FF94ED",
+        "usage": "분홍 팔레트 70 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/pink.ts"
+      },
+      "atomic.pink.80": {
+        "value": "#FFB8F3",
+        "usage": "분홍 팔레트 80 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/pink.ts"
+      },
+      "atomic.pink.90": {
+        "value": "#FED3F7",
+        "usage": "분홍 팔레트 90 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/pink.ts"
+      },
+      "atomic.pink.95": {
+        "value": "#FEECFB",
+        "usage": "분홍 팔레트 95 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/pink.ts"
+      },
+      "atomic.pink.99": {
+        "value": "#FFFAFE",
+        "usage": "분홍 팔레트 99 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/pink.ts"
+      },
+      "atomic.purple.10": {
+        "value": "#290247",
+        "usage": "보라 팔레트 10 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/purple.ts"
+      },
+      "atomic.purple.20": {
+        "value": "#580A7D",
+        "usage": "보라 팔레트 20 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/purple.ts"
+      },
+      "atomic.purple.30": {
+        "value": "#861CB8",
+        "usage": "보라 팔레트 30 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/purple.ts"
+      },
+      "atomic.purple.40": {
+        "value": "#AD36E3",
+        "usage": "보라 팔레트 40 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/purple.ts"
+      },
+      "atomic.purple.50": {
+        "value": "#CB59FF",
+        "usage": "보라 팔레트 50 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/purple.ts"
+      },
+      "atomic.purple.60": {
+        "value": "#D478FF",
+        "usage": "보라 팔레트 60 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/purple.ts"
+      },
+      "atomic.purple.70": {
+        "value": "#DE96FF",
+        "usage": "보라 팔레트 70 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/purple.ts"
+      },
+      "atomic.purple.80": {
+        "value": "#E9BAFF",
+        "usage": "보라 팔레트 80 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/purple.ts"
+      },
+      "atomic.purple.90": {
+        "value": "#F2D6FF",
+        "usage": "보라 팔레트 90 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/purple.ts"
+      },
+      "atomic.purple.95": {
+        "value": "#F9EDFF",
+        "usage": "보라 팔레트 95 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/purple.ts"
+      },
+      "atomic.purple.99": {
+        "value": "#FEFBFF",
+        "usage": "보라 팔레트 99 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/purple.ts"
+      },
+      "atomic.red.10": {
+        "value": "#3B0101",
+        "usage": "빨강 팔레트 10 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/red.ts"
+      },
+      "atomic.red.20": {
+        "value": "#730303",
+        "usage": "빨강 팔레트 20 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/red.ts"
+      },
+      "atomic.red.30": {
+        "value": "#B00C0C",
+        "usage": "빨강 팔레트 30 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/red.ts"
+      },
+      "atomic.red.40": {
+        "value": "#E52222",
+        "usage": "빨강 팔레트 40 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/red.ts"
+      },
+      "atomic.red.50": {
+        "value": "#FF4242",
+        "usage": "빨강 팔레트 50 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/red.ts"
+      },
+      "atomic.red.60": {
+        "value": "#FF6363",
+        "usage": "빨강 팔레트 60 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/red.ts"
+      },
+      "atomic.red.70": {
+        "value": "#FF8C8C",
+        "usage": "빨강 팔레트 70 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/red.ts"
+      },
+      "atomic.red.80": {
+        "value": "#FFB5B5",
+        "usage": "빨강 팔레트 80 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/red.ts"
+      },
+      "atomic.red.90": {
+        "value": "#FED5D5",
+        "usage": "빨강 팔레트 90 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/red.ts"
+      },
+      "atomic.red.95": {
+        "value": "#FEECEC",
+        "usage": "빨강 팔레트 95 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/red.ts"
+      },
+      "atomic.red.99": {
+        "value": "#FFFAFA",
+        "usage": "빨강 팔레트 99 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/red.ts"
+      },
+      "atomic.violet.10": {
+        "value": "#11024D",
+        "usage": "바이올렛 팔레트 10 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/violet.ts"
+      },
+      "atomic.violet.20": {
+        "value": "#23098F",
+        "usage": "바이올렛 팔레트 20 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/violet.ts"
+      },
+      "atomic.violet.30": {
+        "value": "#3A16C9",
+        "usage": "바이올렛 팔레트 30 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/violet.ts"
+      },
+      "atomic.violet.40": {
+        "value": "#4F29E5",
+        "usage": "바이올렛 팔레트 40 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/violet.ts"
+      },
+      "atomic.violet.45": {
+        "value": "#5B37ED",
+        "usage": "바이올렛 팔레트 45 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/violet.ts"
+      },
+      "atomic.violet.50": {
+        "value": "#6541F2",
+        "usage": "바이올렛 팔레트 50 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/violet.ts"
+      },
+      "atomic.violet.60": {
+        "value": "#7D5EF7",
+        "usage": "바이올렛 팔레트 60 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/violet.ts"
+      },
+      "atomic.violet.70": {
+        "value": "#9E86FC",
+        "usage": "바이올렛 팔레트 70 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/violet.ts"
+      },
+      "atomic.violet.80": {
+        "value": "#C0B0FF",
+        "usage": "바이올렛 팔레트 80 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/violet.ts"
+      },
+      "atomic.violet.90": {
+        "value": "#DBD3FE",
+        "usage": "바이올렛 팔레트 90 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/violet.ts"
+      },
+      "atomic.violet.95": {
+        "value": "#F0ECFE",
+        "usage": "바이올렛 팔레트 95 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/violet.ts"
+      },
+      "atomic.violet.99": {
+        "value": "#FBFAFF",
+        "usage": "바이올렛 팔레트 99 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/violet.ts"
+      },
+      "atomic.redOrange.10": {
+        "value": "#290F00",
+        "usage": "붉은 주황 팔레트 10 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/redOrange.ts"
+      },
+      "atomic.redOrange.20": {
+        "value": "#592100",
+        "usage": "붉은 주황 팔레트 20 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/redOrange.ts"
+      },
+      "atomic.redOrange.30": {
+        "value": "#913500",
+        "usage": "붉은 주황 팔레트 30 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/redOrange.ts"
+      },
+      "atomic.redOrange.40": {
+        "value": "#C94A00",
+        "usage": "붉은 주황 팔레트 40 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/redOrange.ts"
+      },
+      "atomic.redOrange.48": {
+        "value": "#F55A00",
+        "usage": "붉은 주황 팔레트 48 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/redOrange.ts"
+      },
+      "atomic.redOrange.50": {
+        "value": "#FF5E00",
+        "usage": "붉은 주황 팔레트 50 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/redOrange.ts"
+      },
+      "atomic.redOrange.60": {
+        "value": "#FF7B2E",
+        "usage": "붉은 주황 팔레트 60 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/redOrange.ts"
+      },
+      "atomic.redOrange.70": {
+        "value": "#FF9B61",
+        "usage": "붉은 주황 팔레트 70 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/redOrange.ts"
+      },
+      "atomic.redOrange.80": {
+        "value": "#FFBD96",
+        "usage": "붉은 주황 팔레트 80 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/redOrange.ts"
+      },
+      "atomic.redOrange.90": {
+        "value": "#FED9C4",
+        "usage": "붉은 주황 팔레트 90 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/redOrange.ts"
+      },
+      "atomic.redOrange.95": {
+        "value": "#FEEEE5",
+        "usage": "붉은 주황 팔레트 95 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/redOrange.ts"
+      },
+      "atomic.redOrange.99": {
+        "value": "#FFFAF7",
+        "usage": "붉은 주황 팔레트 99 단계의 기초 색상으로, 용도별 색상 토큰의 원재료입니다.",
+        "source": "packages/wds-theme/src/theme/atomic/redOrange.ts"
+      }
+    },
+    "light": {
+      "semantic.static.white": {
+        "value": "#ffffff",
+        "usage": "테마와 관계없이 유지되는 고정 흰색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.static.black": {
+        "value": "#000000",
+        "usage": "테마와 관계없이 유지되는 고정 검정입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.primary.normal": {
+        "value": "#0066FF",
+        "usage": "주요 액션과 핵심 요소의 기본 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.primary.strong": {
+        "value": "#005EEB",
+        "usage": "주요 액션과 핵심 요소의 강조 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.primary.heavy": {
+        "value": "#0054D1",
+        "usage": "주요 액션과 핵심 요소의 가장 강한 강조 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.label.normal": {
+        "value": "#171719",
+        "usage": "기본 수준의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.label.strong": {
+        "value": "#000000",
+        "usage": "강조 수준의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.label.neutral": {
+        "value": "#2E2F33E0",
+        "usage": "중간 강조 수준의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.label.alternative": {
+        "value": "#37383C9C",
+        "usage": "보조 수준의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.label.assistive": {
+        "value": "#37383C47",
+        "usage": "낮은 강조 수준의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.label.disable": {
+        "value": "#37383C29",
+        "usage": "사용 불가 수준의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.background.normal.normal": {
+        "value": "#ffffff",
+        "usage": "일반 화면의 기본 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.background.normal.alternative": {
+        "value": "#F7F7F8",
+        "usage": "일반 화면의 보조 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.background.elevated.normal": {
+        "value": "#ffffff",
+        "usage": "떠 있는 표면의 기본 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.background.elevated.alternative": {
+        "value": "#F7F7F8",
+        "usage": "떠 있는 표면의 보조 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.background.transparent.normal": {
+        "value": "#ffffff14",
+        "usage": "반투명 표면의 기본 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.background.transparent.alternative": {
+        "value": "#ffffff47",
+        "usage": "반투명 표면의 보조 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.background.status.negative": {
+        "value": "#FF424214",
+        "usage": "오류·부정 상태를 나타내는 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.background.status.cautionary": {
+        "value": "#FF920014",
+        "usage": "주의·경고 상태를 나타내는 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.background.status.positive": {
+        "value": "#00BF4014",
+        "usage": "성공·긍정 상태를 나타내는 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.interaction.inactive": {
+        "value": "#989BA2",
+        "usage": "비활성 상호작용 요소를 나타내는 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.interaction.disable": {
+        "value": "#F4F4F5",
+        "usage": "사용 불가 상호작용 요소를 나타내는 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.line.normal.normal": {
+        "value": "#70737C38",
+        "usage": "일반 반투명 테두리·구분선의 기본 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.line.normal.neutral": {
+        "value": "#70737C29",
+        "usage": "일반 반투명 테두리·구분선의 중간 강조 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.line.normal.alternative": {
+        "value": "#70737C14",
+        "usage": "일반 반투명 테두리·구분선의 보조 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.line.solid.normal": {
+        "value": "#E1E2E4",
+        "usage": "불투명 테두리·구분선의 기본 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.line.solid.neutral": {
+        "value": "#EAEBEC",
+        "usage": "불투명 테두리·구분선의 중간 강조 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.line.solid.alternative": {
+        "value": "#F4F4F5",
+        "usage": "불투명 테두리·구분선의 보조 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.line.primary.normal": {
+        "value": "#0066FF47",
+        "usage": "주요 강조 테두리·구분선의 기본 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.line.primary.strong": {
+        "value": "#0066FF6E",
+        "usage": "주요 강조 테두리·구분선의 강조 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.line.status.negative.normal": {
+        "value": "#FF42426E",
+        "usage": "오류·부정 상태의 기본 테두리·구분선 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.line.status.negative.strong": {
+        "value": "#FF424285",
+        "usage": "오류·부정 상태의 강조 테두리·구분선 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.line.status.cautionary.normal": {
+        "value": "#FF92006E",
+        "usage": "주의·경고 상태의 기본 테두리·구분선 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.line.status.positive.normal": {
+        "value": "#00BF406E",
+        "usage": "성공·긍정 상태의 기본 테두리·구분선 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.status.positive": {
+        "value": "#00BF40",
+        "usage": "성공·긍정 상태를 나타내는 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.status.cautionary": {
+        "value": "#FF9200",
+        "usage": "주의·경고 상태를 나타내는 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.status.negative": {
+        "value": "#FF4242",
+        "usage": "오류·부정 상태를 나타내는 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.accent.background.redOrange": {
+        "value": "#FF5E00",
+        "usage": "붉은 주황 계열 강조 요소의 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.accent.background.lime": {
+        "value": "#58CF04",
+        "usage": "라임 계열 강조 요소의 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.accent.background.cyan": {
+        "value": "#00BDDE",
+        "usage": "청록 계열 강조 요소의 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.accent.background.lightBlue": {
+        "value": "#00AEFF",
+        "usage": "밝은 파랑 계열 강조 요소의 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.accent.background.violet": {
+        "value": "#6541F2",
+        "usage": "바이올렛 계열 강조 요소의 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.accent.background.purple": {
+        "value": "#CB59FF",
+        "usage": "보라 계열 강조 요소의 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.accent.background.pink": {
+        "value": "#F553DA",
+        "usage": "분홍 계열 강조 요소의 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.accent.foreground.red": {
+        "value": "#E52222",
+        "usage": "빨강 계열 강조 요소의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.accent.foreground.redOrange": {
+        "value": "#F55A00",
+        "usage": "붉은 주황 계열 강조 요소의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.accent.foreground.orange": {
+        "value": "#D17600",
+        "usage": "주황 계열 강조 요소의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.accent.foreground.lime": {
+        "value": "#429E00",
+        "usage": "라임 계열 강조 요소의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.accent.foreground.green": {
+        "value": "#009632",
+        "usage": "초록 계열 강조 요소의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.accent.foreground.cyan": {
+        "value": "#0098B2",
+        "usage": "청록 계열 강조 요소의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.accent.foreground.lightBlue": {
+        "value": "#008DCF",
+        "usage": "밝은 파랑 계열 강조 요소의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.accent.foreground.blue": {
+        "value": "#005EEB",
+        "usage": "파랑 계열 강조 요소의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.accent.foreground.violet": {
+        "value": "#5B37ED",
+        "usage": "바이올렛 계열 강조 요소의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.accent.foreground.purple": {
+        "value": "#AD36E3",
+        "usage": "보라 계열 강조 요소의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.accent.foreground.pink": {
+        "value": "#E846CD",
+        "usage": "분홍 계열 강조 요소의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.inverse.primary": {
+        "value": "#3385FF",
+        "usage": "반전된 표면에서 사용하는 주요 강조색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.inverse.background": {
+        "value": "#1B1C1E",
+        "usage": "반전된 표면에서 사용하는 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.inverse.label": {
+        "value": "#F7F7F8",
+        "usage": "반전된 표면에서 사용하는 텍스트·아이콘 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.fill.normal": {
+        "value": "#70737C14",
+        "usage": "요소 내부 영역에 사용하는 기본 채움색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.fill.strong": {
+        "value": "#70737C29",
+        "usage": "요소 내부 영역에 사용하는 강조 채움색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.fill.alternative": {
+        "value": "#70737C0D",
+        "usage": "요소 내부 영역에 사용하는 보조 채움색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.material.dimmer": {
+        "value": "#17171985",
+        "usage": "모달 등의 뒤쪽 화면을 어둡게 덮는 딤 처리 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      }
+    },
+    "dark": {
+      "semantic.static.white": {
+        "value": "#ffffff",
+        "usage": "테마와 관계없이 유지되는 고정 흰색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.static.black": {
+        "value": "#000000",
+        "usage": "테마와 관계없이 유지되는 고정 검정입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.primary.normal": {
+        "value": "#3385FF",
+        "usage": "주요 액션과 핵심 요소의 기본 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.primary.strong": {
+        "value": "#1A75FF",
+        "usage": "주요 액션과 핵심 요소의 강조 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.primary.heavy": {
+        "value": "#0066FF",
+        "usage": "주요 액션과 핵심 요소의 가장 강한 강조 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.label.normal": {
+        "value": "#F7F7F8",
+        "usage": "기본 수준의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.label.strong": {
+        "value": "#ffffff",
+        "usage": "강조 수준의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.label.neutral": {
+        "value": "#C2C4C8E0",
+        "usage": "중간 강조 수준의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.label.alternative": {
+        "value": "#AEB0B69C",
+        "usage": "보조 수준의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.label.assistive": {
+        "value": "#AEB0B647",
+        "usage": "낮은 강조 수준의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.label.disable": {
+        "value": "#989BA229",
+        "usage": "사용 불가 수준의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.background.normal.normal": {
+        "value": "#1B1C1E",
+        "usage": "일반 화면의 기본 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.background.normal.alternative": {
+        "value": "#0F0F10",
+        "usage": "일반 화면의 보조 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.background.elevated.normal": {
+        "value": "#212225",
+        "usage": "떠 있는 표면의 기본 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.background.elevated.alternative": {
+        "value": "#141415",
+        "usage": "떠 있는 표면의 보조 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.background.transparent.normal": {
+        "value": "#2122259C",
+        "usage": "반투명 표면의 기본 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.background.transparent.alternative": {
+        "value": "#2122259C",
+        "usage": "반투명 표면의 보조 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.background.status.negative": {
+        "value": "#FF636314",
+        "usage": "오류·부정 상태를 나타내는 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.background.status.cautionary": {
+        "value": "#FFA93814",
+        "usage": "주의·경고 상태를 나타내는 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.background.status.positive": {
+        "value": "#1ED45A14",
+        "usage": "성공·긍정 상태를 나타내는 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.interaction.inactive": {
+        "value": "#5A5C63",
+        "usage": "비활성 상호작용 요소를 나타내는 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.interaction.disable": {
+        "value": "#2E2F33",
+        "usage": "사용 불가 상호작용 요소를 나타내는 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.line.normal.normal": {
+        "value": "#70737C52",
+        "usage": "일반 반투명 테두리·구분선의 기본 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.line.normal.neutral": {
+        "value": "#70737C47",
+        "usage": "일반 반투명 테두리·구분선의 중간 강조 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.line.normal.alternative": {
+        "value": "#70737C38",
+        "usage": "일반 반투명 테두리·구분선의 보조 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.line.solid.normal": {
+        "value": "#37383C",
+        "usage": "불투명 테두리·구분선의 기본 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.line.solid.neutral": {
+        "value": "#333438",
+        "usage": "불투명 테두리·구분선의 중간 강조 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.line.solid.alternative": {
+        "value": "#2E2F33",
+        "usage": "불투명 테두리·구분선의 보조 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.line.primary.normal": {
+        "value": "#3385FF47",
+        "usage": "주요 강조 테두리·구분선의 기본 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.line.primary.strong": {
+        "value": "#3385FF6E",
+        "usage": "주요 강조 테두리·구분선의 강조 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.line.status.negative.normal": {
+        "value": "#FF63636E",
+        "usage": "오류·부정 상태의 기본 테두리·구분선 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.line.status.negative.strong": {
+        "value": "#FF636385",
+        "usage": "오류·부정 상태의 강조 테두리·구분선 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.line.status.cautionary.normal": {
+        "value": "#FFA9386E",
+        "usage": "주의·경고 상태의 기본 테두리·구분선 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.line.status.positive.normal": {
+        "value": "#1ED45A6E",
+        "usage": "성공·긍정 상태의 기본 테두리·구분선 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.status.positive": {
+        "value": "#1ED45A",
+        "usage": "성공·긍정 상태를 나타내는 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.status.cautionary": {
+        "value": "#FFA938",
+        "usage": "주의·경고 상태를 나타내는 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.status.negative": {
+        "value": "#FF6363",
+        "usage": "오류·부정 상태를 나타내는 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.accent.background.redOrange": {
+        "value": "#FF7B2E",
+        "usage": "붉은 주황 계열 강조 요소의 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.accent.background.lime": {
+        "value": "#6BE016",
+        "usage": "라임 계열 강조 요소의 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.accent.background.cyan": {
+        "value": "#28D0ED",
+        "usage": "청록 계열 강조 요소의 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.accent.background.lightBlue": {
+        "value": "#3DC2FF",
+        "usage": "밝은 파랑 계열 강조 요소의 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.accent.background.violet": {
+        "value": "#7D5EF7",
+        "usage": "바이올렛 계열 강조 요소의 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.accent.background.purple": {
+        "value": "#D478FF",
+        "usage": "보라 계열 강조 요소의 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.accent.background.pink": {
+        "value": "#FA73E3",
+        "usage": "분홍 계열 강조 요소의 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.accent.foreground.red": {
+        "value": "#FF6363",
+        "usage": "빨강 계열 강조 요소의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.accent.foreground.redOrange": {
+        "value": "#FF7B2E",
+        "usage": "붉은 주황 계열 강조 요소의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.accent.foreground.orange": {
+        "value": "#FF9200",
+        "usage": "주황 계열 강조 요소의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.accent.foreground.lime": {
+        "value": "#58CF04",
+        "usage": "라임 계열 강조 요소의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.accent.foreground.green": {
+        "value": "#1ED45A",
+        "usage": "초록 계열 강조 요소의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.accent.foreground.cyan": {
+        "value": "#00BDDE",
+        "usage": "청록 계열 강조 요소의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.accent.foreground.lightBlue": {
+        "value": "#00AEFF",
+        "usage": "밝은 파랑 계열 강조 요소의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.accent.foreground.blue": {
+        "value": "#4F95FF",
+        "usage": "파랑 계열 강조 요소의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.accent.foreground.violet": {
+        "value": "#9E86FC",
+        "usage": "바이올렛 계열 강조 요소의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.accent.foreground.purple": {
+        "value": "#D478FF",
+        "usage": "보라 계열 강조 요소의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.accent.foreground.pink": {
+        "value": "#FA73E3",
+        "usage": "분홍 계열 강조 요소의 텍스트·아이콘 전경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.inverse.primary": {
+        "value": "#0066FF",
+        "usage": "반전된 표면에서 사용하는 주요 강조색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.inverse.background": {
+        "value": "#ffffff",
+        "usage": "반전된 표면에서 사용하는 배경색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.inverse.label": {
+        "value": "#171719",
+        "usage": "반전된 표면에서 사용하는 텍스트·아이콘 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.fill.normal": {
+        "value": "#70737C38",
+        "usage": "요소 내부 영역에 사용하는 기본 채움색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.fill.strong": {
+        "value": "#70737C47",
+        "usage": "요소 내부 영역에 사용하는 강조 채움색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.fill.alternative": {
+        "value": "#70737C1F",
+        "usage": "요소 내부 영역에 사용하는 보조 채움색입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.material.dimmer": {
+        "value": "#171719BD",
+        "usage": "모달 등의 뒤쪽 화면을 어둡게 덮는 딤 처리 색상입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      }
+    }
+  },
+  "typography": {
+    "display1": {
+      "value": {
+        "fontSize": "3.5rem",
+        "lineHeight": "4.5rem",
+        "letterSpacing": "-0.0319em",
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 700
+        }
+      },
+      "usage": "대형 표시 제목에 사용하는 display1 스타일입니다.",
+      "source": "packages/wds/src/components/typography/style.ts"
+    },
+    "display2": {
+      "value": {
+        "fontSize": "2.5rem",
+        "lineHeight": "3.25rem",
+        "letterSpacing": "-0.0282em",
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 700
+        }
+      },
+      "usage": "대형 표시 제목에 사용하는 display2 스타일입니다.",
+      "source": "packages/wds/src/components/typography/style.ts"
+    },
+    "display3": {
+      "value": {
+        "fontSize": "2.25rem",
+        "lineHeight": "3rem",
+        "letterSpacing": "-0.027em",
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 700
+        }
+      },
+      "usage": "대형 표시 제목에 사용하는 display3 스타일입니다.",
+      "source": "packages/wds/src/components/typography/style.ts"
+    },
+    "title1": {
+      "value": {
+        "fontSize": "2rem",
+        "lineHeight": "2.75rem",
+        "letterSpacing": "-0.0253em",
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 700
+        }
+      },
+      "usage": "화면·섹션 제목에 사용하는 title1 스타일입니다.",
+      "source": "packages/wds/src/components/typography/style.ts"
+    },
+    "title2": {
+      "value": {
+        "fontSize": "1.75rem",
+        "lineHeight": "2.375rem",
+        "letterSpacing": "-0.0236em",
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 700
+        }
+      },
+      "usage": "화면·섹션 제목에 사용하는 title2 스타일입니다.",
+      "source": "packages/wds/src/components/typography/style.ts"
+    },
+    "title3": {
+      "value": {
+        "fontSize": "1.5rem",
+        "lineHeight": "2rem",
+        "letterSpacing": "-0.023em",
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 700
+        }
+      },
+      "usage": "화면·섹션 제목에 사용하는 title3 스타일입니다.",
+      "source": "packages/wds/src/components/typography/style.ts"
+    },
+    "heading1": {
+      "value": {
+        "fontSize": "1.375rem",
+        "lineHeight": "1.875rem",
+        "letterSpacing": "-0.0194em",
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 600
+        }
+      },
+      "usage": "영역 제목에 사용하는 heading1 스타일입니다.",
+      "source": "packages/wds/src/components/typography/style.ts"
+    },
+    "heading2": {
+      "value": {
+        "fontSize": "1.25rem",
+        "lineHeight": "1.75rem",
+        "letterSpacing": "-0.012em",
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 600
+        }
+      },
+      "usage": "영역 제목에 사용하는 heading2 스타일입니다.",
+      "source": "packages/wds/src/components/typography/style.ts"
+    },
+    "headline1": {
+      "value": {
+        "fontSize": "1.125rem",
+        "lineHeight": "1.625rem",
+        "letterSpacing": "-0.002em",
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 600
+        }
+      },
+      "usage": "짧은 주요 문구에 사용하는 headline1 스타일입니다.",
+      "source": "packages/wds/src/components/typography/style.ts"
+    },
+    "headline2": {
+      "value": {
+        "fontSize": "1.0625rem",
+        "lineHeight": "1.5rem",
+        "letterSpacing": "0em",
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 600
+        }
+      },
+      "usage": "짧은 주요 문구에 사용하는 headline2 스타일입니다.",
+      "source": "packages/wds/src/components/typography/style.ts"
+    },
+    "body1": {
+      "value": {
+        "fontSize": "1rem",
+        "lineHeight": "1.5rem",
+        "letterSpacing": "0.0057em",
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 600
+        }
+      },
+      "usage": "본문에 사용하는 body1 스타일입니다.",
+      "source": "packages/wds/src/components/typography/style.ts"
+    },
+    "body1-reading": {
+      "value": {
+        "fontSize": "1rem",
+        "lineHeight": "1.625rem",
+        "letterSpacing": "0.0057em",
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 600
+        }
+      },
+      "usage": "본문에 사용하는 body1-reading 스타일로, 읽기용 줄 간격을 적용합니다.",
+      "source": "packages/wds/src/components/typography/style.ts"
+    },
+    "body2": {
+      "value": {
+        "fontSize": "0.9375rem",
+        "lineHeight": "1.375rem",
+        "letterSpacing": "0.0096em",
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 600
+        }
+      },
+      "usage": "본문에 사용하는 body2 스타일입니다.",
+      "source": "packages/wds/src/components/typography/style.ts"
+    },
+    "body2-reading": {
+      "value": {
+        "fontSize": "0.9375rem",
+        "lineHeight": "1.5rem",
+        "letterSpacing": "0.0096em",
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 600
+        }
+      },
+      "usage": "본문에 사용하는 body2-reading 스타일로, 읽기용 줄 간격을 적용합니다.",
+      "source": "packages/wds/src/components/typography/style.ts"
+    },
+    "label1": {
+      "value": {
+        "fontSize": "0.875rem",
+        "lineHeight": "1.25rem",
+        "letterSpacing": "0.0145em",
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 600
+        }
+      },
+      "usage": "라벨에 사용하는 label1 스타일입니다.",
+      "source": "packages/wds/src/components/typography/style.ts"
+    },
+    "label1-reading": {
+      "value": {
+        "fontSize": "0.875rem",
+        "lineHeight": "1.375rem",
+        "letterSpacing": "0.0145em",
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 600
+        }
+      },
+      "usage": "라벨에 사용하는 label1-reading 스타일로, 읽기용 줄 간격을 적용합니다.",
+      "source": "packages/wds/src/components/typography/style.ts"
+    },
+    "label2": {
+      "value": {
+        "fontSize": "0.8125rem",
+        "lineHeight": "1.125rem",
+        "letterSpacing": "0.0194em",
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 600
+        }
+      },
+      "usage": "라벨에 사용하는 label2 스타일입니다.",
+      "source": "packages/wds/src/components/typography/style.ts"
+    },
+    "caption1": {
+      "value": {
+        "fontSize": "0.75rem",
+        "lineHeight": "1rem",
+        "letterSpacing": "0.0252em",
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 600
+        }
+      },
+      "usage": "작은 보조 설명에 사용하는 caption1 스타일입니다.",
+      "source": "packages/wds/src/components/typography/style.ts"
+    },
+    "caption2": {
+      "value": {
+        "fontSize": "0.6875rem",
+        "lineHeight": "0.875rem",
+        "letterSpacing": "0.0311em",
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 600
+        }
+      },
+      "usage": "작은 보조 설명에 사용하는 caption2 스타일입니다.",
+      "source": "packages/wds/src/components/typography/style.ts"
+    }
+  },
+  "spacing": {
+    "0": {
+      "value": "0px",
+      "usage": "여백·패딩·요소 사이 간격에 사용하는 0px 공통 간격입니다.",
+      "source": "packages/wds-theme/src/theme/spacing/index.ts"
+    },
+    "1": {
+      "value": "1px",
+      "usage": "여백·패딩·요소 사이 간격에 사용하는 1px 공통 간격입니다.",
+      "source": "packages/wds-theme/src/theme/spacing/index.ts"
+    },
+    "2": {
+      "value": "2px",
+      "usage": "여백·패딩·요소 사이 간격에 사용하는 2px 공통 간격입니다.",
+      "source": "packages/wds-theme/src/theme/spacing/index.ts"
+    },
+    "4": {
+      "value": "4px",
+      "usage": "여백·패딩·요소 사이 간격에 사용하는 4px 공통 간격입니다.",
+      "source": "packages/wds-theme/src/theme/spacing/index.ts"
+    },
+    "6": {
+      "value": "6px",
+      "usage": "여백·패딩·요소 사이 간격에 사용하는 6px 공통 간격입니다.",
+      "source": "packages/wds-theme/src/theme/spacing/index.ts"
+    },
+    "8": {
+      "value": "8px",
+      "usage": "여백·패딩·요소 사이 간격에 사용하는 8px 공통 간격입니다.",
+      "source": "packages/wds-theme/src/theme/spacing/index.ts"
+    },
+    "10": {
+      "value": "10px",
+      "usage": "여백·패딩·요소 사이 간격에 사용하는 10px 공통 간격입니다.",
+      "source": "packages/wds-theme/src/theme/spacing/index.ts"
+    },
+    "12": {
+      "value": "12px",
+      "usage": "여백·패딩·요소 사이 간격에 사용하는 12px 공통 간격입니다.",
+      "source": "packages/wds-theme/src/theme/spacing/index.ts"
+    },
+    "14": {
+      "value": "14px",
+      "usage": "여백·패딩·요소 사이 간격에 사용하는 14px 공통 간격입니다.",
+      "source": "packages/wds-theme/src/theme/spacing/index.ts"
+    },
+    "16": {
+      "value": "16px",
+      "usage": "여백·패딩·요소 사이 간격에 사용하는 16px 공통 간격입니다.",
+      "source": "packages/wds-theme/src/theme/spacing/index.ts"
+    },
+    "20": {
+      "value": "20px",
+      "usage": "여백·패딩·요소 사이 간격에 사용하는 20px 공통 간격입니다.",
+      "source": "packages/wds-theme/src/theme/spacing/index.ts"
+    },
+    "24": {
+      "value": "24px",
+      "usage": "여백·패딩·요소 사이 간격에 사용하는 24px 공통 간격입니다.",
+      "source": "packages/wds-theme/src/theme/spacing/index.ts"
+    },
+    "32": {
+      "value": "32px",
+      "usage": "여백·패딩·요소 사이 간격에 사용하는 32px 공통 간격입니다.",
+      "source": "packages/wds-theme/src/theme/spacing/index.ts"
+    },
+    "40": {
+      "value": "40px",
+      "usage": "여백·패딩·요소 사이 간격에 사용하는 40px 공통 간격입니다.",
+      "source": "packages/wds-theme/src/theme/spacing/index.ts"
+    },
+    "48": {
+      "value": "48px",
+      "usage": "여백·패딩·요소 사이 간격에 사용하는 48px 공통 간격입니다.",
+      "source": "packages/wds-theme/src/theme/spacing/index.ts"
+    },
+    "56": {
+      "value": "56px",
+      "usage": "여백·패딩·요소 사이 간격에 사용하는 56px 공통 간격입니다.",
+      "source": "packages/wds-theme/src/theme/spacing/index.ts"
+    },
+    "64": {
+      "value": "64px",
+      "usage": "여백·패딩·요소 사이 간격에 사용하는 64px 공통 간격입니다.",
+      "source": "packages/wds-theme/src/theme/spacing/index.ts"
+    },
+    "72": {
+      "value": "72px",
+      "usage": "여백·패딩·요소 사이 간격에 사용하는 72px 공통 간격입니다.",
+      "source": "packages/wds-theme/src/theme/spacing/index.ts"
+    },
+    "80": {
+      "value": "80px",
+      "usage": "여백·패딩·요소 사이 간격에 사용하는 80px 공통 간격입니다.",
+      "source": "packages/wds-theme/src/theme/spacing/index.ts"
+    },
+    "0.5": {
+      "value": "0.5px",
+      "usage": "여백·패딩·요소 사이 간격에 사용하는 0.5px 공통 간격입니다.",
+      "source": "packages/wds-theme/src/theme/spacing/index.ts"
+    }
+  },
+  "radius": {
+    "3": {
+      "value": "3px",
+      "usage": "가장 작은 모서리. skeleton(text 변형)에 쓰였습니다.",
+      "source": "packages/wds/src/components/*/style.ts"
+    },
+    "5": {
+      "value": "5px",
+      "usage": "작은 사각 체크 표시. checkbox 에 쓰였습니다.",
+      "source": "packages/wds/src/components/*/style.ts"
+    },
+    "6": {
+      "value": "6px",
+      "usage": "작은 크기 컨트롤. chip·category·filter-button(small), text-button, tooltip(small), segmented-control(small 안쪽), avatar(작은 크기)에 쓰였습니다.",
+      "source": "packages/wds/src/components/*/style.ts"
+    },
+    "8": {
+      "value": "8px",
+      "usage": "작은 버튼·배지. button(small), chip·category·filter-button(medium), content-badge, pagination, tooltip, date-range-calendar, time-view, segmented-control, avatar 에 쓰였습니다.",
+      "source": "packages/wds/src/components/*/style.ts"
+    },
+    "10": {
+      "value": "10px",
+      "usage": "중간 버튼·컨트롤. button(medium), chip·category·filter-button(large), content-badge(large), scroll-area, section-header, segmented-control, avatar 에 쓰였습니다.",
+      "source": "packages/wds/src/components/*/style.ts"
+    },
+    "12": {
+      "value": "12px",
+      "usage": "카드·입력창·큰 버튼의 기본 모서리. button(large), card, text-field, text-area, select, search-field, table, list, alert, section-message, snackbar, toast, popover(small), modal(small·medium), thumbnail, date-picker, time-picker, avatar 에 쓰였습니다.",
+      "source": "packages/wds/src/components/*/style.ts"
+    },
+    "14": {
+      "value": "14px",
+      "usage": "avatar(가장 큰 크기)에만 쓰였습니다.",
+      "source": "packages/wds/src/components/*/style.ts"
+    },
+    "16": {
+      "value": "16px",
+      "usage": "떠 있는 패널. menu, popover, autocomplete 에 쓰였습니다.",
+      "source": "packages/wds/src/components/*/style.ts"
+    },
+    "20": {
+      "value": "20px",
+      "usage": "큰 모달. modal(large·xlarge popup)에 쓰였습니다.",
+      "source": "packages/wds/src/components/*/style.ts"
+    },
+    "full": {
+      "value": "9999px",
+      "usage": "완전한 원형·알약형. icon-button, radio, round-checkbox, check-mark, toggle-icon, stepper, progress-tracker, push-badge, slider, avatar(circle)에 9999px 로 쓰였고, switch·page-counter·pagination-dots·play-badge·modal handle·date-calendar·toast·section-message 의 1000px·999px·10000px·100px·75px 도 같은 용도라 하나로 묶었습니다. (skeleton circle 의 50% 도 원형입니다)",
+      "source": "packages/wds/src/components/*/style.ts"
+    }
+  },
+  "opacity": {
+    "0": {
+      "value": 0,
+      "usage": "색상 투명도 계산 등에 사용하는 0% 불투명도입니다.",
+      "source": "packages/wds-theme/src/theme/opacity/index.ts"
+    },
+    "5": {
+      "value": 0.05,
+      "usage": "색상 투명도 계산 등에 사용하는 5% 불투명도입니다.",
+      "source": "packages/wds-theme/src/theme/opacity/index.ts"
+    },
+    "8": {
+      "value": 0.08,
+      "usage": "색상 투명도 계산 등에 사용하는 8% 불투명도입니다.",
+      "source": "packages/wds-theme/src/theme/opacity/index.ts"
+    },
+    "12": {
+      "value": 0.12,
+      "usage": "색상 투명도 계산 등에 사용하는 12% 불투명도입니다.",
+      "source": "packages/wds-theme/src/theme/opacity/index.ts"
+    },
+    "16": {
+      "value": 0.16,
+      "usage": "색상 투명도 계산 등에 사용하는 16% 불투명도입니다.",
+      "source": "packages/wds-theme/src/theme/opacity/index.ts"
+    },
+    "22": {
+      "value": 0.22,
+      "usage": "색상 투명도 계산 등에 사용하는 22% 불투명도입니다.",
+      "source": "packages/wds-theme/src/theme/opacity/index.ts"
+    },
+    "28": {
+      "value": 0.28,
+      "usage": "색상 투명도 계산 등에 사용하는 28% 불투명도입니다.",
+      "source": "packages/wds-theme/src/theme/opacity/index.ts"
+    },
+    "35": {
+      "value": 0.35,
+      "usage": "색상 투명도 계산 등에 사용하는 35% 불투명도입니다.",
+      "source": "packages/wds-theme/src/theme/opacity/index.ts"
+    },
+    "43": {
+      "value": 0.43,
+      "usage": "색상 투명도 계산 등에 사용하는 43% 불투명도입니다.",
+      "source": "packages/wds-theme/src/theme/opacity/index.ts"
+    },
+    "52": {
+      "value": 0.52,
+      "usage": "색상 투명도 계산 등에 사용하는 52% 불투명도입니다.",
+      "source": "packages/wds-theme/src/theme/opacity/index.ts"
+    },
+    "61": {
+      "value": 0.61,
+      "usage": "색상 투명도 계산 등에 사용하는 61% 불투명도입니다.",
+      "source": "packages/wds-theme/src/theme/opacity/index.ts"
+    },
+    "74": {
+      "value": 0.74,
+      "usage": "색상 투명도 계산 등에 사용하는 74% 불투명도입니다.",
+      "source": "packages/wds-theme/src/theme/opacity/index.ts"
+    },
+    "88": {
+      "value": 0.88,
+      "usage": "색상 투명도 계산 등에 사용하는 88% 불투명도입니다.",
+      "source": "packages/wds-theme/src/theme/opacity/index.ts"
+    },
+    "97": {
+      "value": 0.97,
+      "usage": "색상 투명도 계산 등에 사용하는 97% 불투명도입니다.",
+      "source": "packages/wds-theme/src/theme/opacity/index.ts"
+    },
+    "100": {
+      "value": 1,
+      "usage": "색상 투명도 계산 등에 사용하는 100% 불투명도입니다.",
+      "source": "packages/wds-theme/src/theme/opacity/index.ts"
+    }
+  },
+  "breakpoint": {
+    "xl": {
+      "value": "1600px",
+      "usage": "반응형 레이아웃의 xl 기준 너비 1600px입니다.",
+      "source": "packages/wds-theme/src/theme/breakpoint/index.ts"
+    },
+    "lg": {
+      "value": "1200px",
+      "usage": "반응형 레이아웃의 lg 기준 너비 1200px입니다.",
+      "source": "packages/wds-theme/src/theme/breakpoint/index.ts"
+    },
+    "md": {
+      "value": "992px",
+      "usage": "반응형 레이아웃의 md 기준 너비 992px입니다.",
+      "source": "packages/wds-theme/src/theme/breakpoint/index.ts"
+    },
+    "sm": {
+      "value": "768px",
+      "usage": "반응형 레이아웃의 sm 기준 너비 768px입니다.",
+      "source": "packages/wds-theme/src/theme/breakpoint/index.ts"
+    },
+    "xs": {
+      "value": "0px",
+      "usage": "반응형 레이아웃의 xs 기준 너비 0px입니다.",
+      "source": "packages/wds-theme/src/theme/breakpoint/index.ts"
+    }
+  },
+  "zIndex": {
+    "modal": {
+      "value": 1300,
+      "usage": "모달 계층의 쌓임 순서 값입니다.",
+      "source": "packages/wds-theme/src/theme/z-index/index.ts"
+    }
+  },
+  "shadows": {
+    "light": {
+      "semantic.elevation.shadow.normal.xsmall": {
+        "value": "0px 1px 2px -1px #1717171A",
+        "usage": "박스 표면에 적용하는 xsmall 단계 그림자입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.elevation.shadow.normal.small": {
+        "value": "0px 2px 4px -2px #1717170F, 0px 4px 6px -1px #1717170F",
+        "usage": "박스 표면에 적용하는 small 단계 그림자입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.elevation.shadow.normal.medium": {
+        "value": "0px 4px 6px -2px #17171712, 0px 10px 15px -3px #17171712",
+        "usage": "박스 표면에 적용하는 medium 단계 그림자입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.elevation.shadow.normal.large": {
+        "value": "0px 6px 10px -4px #17171714, 0px 16px 24px -6px #17171714",
+        "usage": "박스 표면에 적용하는 large 단계 그림자입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.elevation.shadow.normal.xlarge": {
+        "value": "0px 10px 15px -5px #1717171A, 0px 24px 38px -10px #1717171F",
+        "usage": "박스 표면에 적용하는 xlarge 단계 그림자입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.elevation.shadow.drop.xsmall": {
+        "value": "drop-shadow(0px 1px 0.5px #1717170D)",
+        "usage": "요소 윤곽에 적용하는 xsmall 단계 그림자입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.elevation.shadow.drop.small": {
+        "value": "drop-shadow(0px 2px 1px #17171708) drop-shadow(0px 4px 2.5px #17171708)",
+        "usage": "요소 윤곽에 적용하는 small 단계 그림자입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.elevation.shadow.drop.medium": {
+        "value": "drop-shadow(0px 4px 2px #17171709) drop-shadow(0px 10px 6px #17171709)",
+        "usage": "요소 윤곽에 적용하는 medium 단계 그림자입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.elevation.shadow.drop.large": {
+        "value": "drop-shadow(0px 6px 3px #1717170A) drop-shadow(0px 16px 9px #17171708)",
+        "usage": "요소 윤곽에 적용하는 large 단계 그림자입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.elevation.shadow.drop.xlarge": {
+        "value": "drop-shadow(0px 10px 5px #1717170D) drop-shadow(0px 24px 14px #1717170F)",
+        "usage": "요소 윤곽에 적용하는 xlarge 단계 그림자입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.elevation.shadow.spread.small": {
+        "value": "0px 0px 60px 0px #1717171A",
+        "usage": "넓은 확산 영역에 적용하는 small 단계 그림자입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      },
+      "semantic.elevation.shadow.spread.medium": {
+        "value": "0px 15px 75px 0px #17171729",
+        "usage": "넓은 확산 영역에 적용하는 medium 단계 그림자입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#light"
+      }
+    },
+    "dark": {
+      "semantic.elevation.shadow.normal.xsmall": {
+        "value": "0px 1px 2px -1px #1717171A",
+        "usage": "박스 표면에 적용하는 xsmall 단계 그림자입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.elevation.shadow.normal.small": {
+        "value": "0px 2px 4px -2px #1717170F, 0px 4px 6px -1px #1717170F",
+        "usage": "박스 표면에 적용하는 small 단계 그림자입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.elevation.shadow.normal.medium": {
+        "value": "0px 4px 6px -2px #17171712, 0px 10px 15px -3px #17171712",
+        "usage": "박스 표면에 적용하는 medium 단계 그림자입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.elevation.shadow.normal.large": {
+        "value": "0px 6px 10px -4px #17171714, 0px 16px 24px -6px #17171714",
+        "usage": "박스 표면에 적용하는 large 단계 그림자입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.elevation.shadow.normal.xlarge": {
+        "value": "0px 10px 15px -5px #1717171A, 0px 24px 38px -10px #1717171F",
+        "usage": "박스 표면에 적용하는 xlarge 단계 그림자입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.elevation.shadow.drop.xsmall": {
+        "value": "drop-shadow(0px 1px 0.5px #1717170D)",
+        "usage": "요소 윤곽에 적용하는 xsmall 단계 그림자입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.elevation.shadow.drop.small": {
+        "value": "drop-shadow(0px 2px 1px #17171708) drop-shadow(0px 4px 2.5px #17171708)",
+        "usage": "요소 윤곽에 적용하는 small 단계 그림자입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.elevation.shadow.drop.medium": {
+        "value": "drop-shadow(0px 4px 2px #17171709) drop-shadow(0px 10px 6px #17171709)",
+        "usage": "요소 윤곽에 적용하는 medium 단계 그림자입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.elevation.shadow.drop.large": {
+        "value": "drop-shadow(0px 6px 3px #1717170A) drop-shadow(0px 16px 9px #17171708)",
+        "usage": "요소 윤곽에 적용하는 large 단계 그림자입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.elevation.shadow.drop.xlarge": {
+        "value": "drop-shadow(0px 10px 5px #1717170D) drop-shadow(0px 24px 14px #1717170F)",
+        "usage": "요소 윤곽에 적용하는 xlarge 단계 그림자입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.elevation.shadow.spread.small": {
+        "value": "0px 0px 60px 0px #1717171A",
+        "usage": "넓은 확산 영역에 적용하는 small 단계 그림자입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      },
+      "semantic.elevation.shadow.spread.medium": {
+        "value": "0px 15px 75px 0px #17171729",
+        "usage": "넓은 확산 영역에 적용하는 medium 단계 그림자입니다.",
+        "source": "packages/wds-theme/src/theme/semantic/index.ts#dark"
+      }
+    }
+  },
+  "platformStyles": {
+    "light": {
+      "semantic.platform.ios.navigation": {
+        "value": "\n          background-color: #ffffffE0;\n          backdrop-filter: blur(32px);\n      ",
+        "usage": "iOS 내비게이션 표면의 반투명 배경과 배경 흐림 스타일입니다.",
+        "source": "packages/wds-theme/src/theme/index.ts#lightOriginTheme"
+      }
+    },
+    "dark": {
+      "semantic.platform.ios.navigation": {
+        "value": "\n          background-color: #212225E0;\n          backdrop-filter: blur(32px);\n      ",
+        "usage": "iOS 내비게이션 표면의 반투명 배경과 배경 흐림 스타일입니다.",
+        "source": "packages/wds-theme/src/theme/index.ts#darkOriginTheme"
+      }
+    }
+  }
+}

@@ -114,8 +114,31 @@ AI 기능은 `phase-3-2`의 기존 구현을 이 프로젝트의 메뉴 데이�
 | [DESIGN_PROMPTS.md](DESIGN_PROMPTS.md) | 디자인 토큰·화면 목업·캔버스 연결을 연습한 프롬프트와 작업 흐름 |
 | [디자인 토큰](menu-app/design/montage.tokens.json) · [목업](menu-app/design/mockup.html) | 공통 스타일 기준과 정적 화면 아트보드 |
 | [AGENTS.md](AGENTS.md) · [CLAUDE.md](CLAUDE.md) | 프로젝트 스타일·API·폴더 구조와 AI 도구 작업 규칙 |
-| [api-docs.json](api-docs.json) · [sql](sql/) | 서버 API 명세와 단계별 DB 변경·더미 데이터 |
+| [chap06-spring-data-jpa/api-docs.json](chap06-spring-data-jpa/api-docs.json) · [sql](chap06-spring-data-jpa/sql/) | 서버 API 명세와 단계별 DB 변경·더미 데이터 |
 
+
+## 저장소 구조
+
+```text
+menu-react-vivecoding/
+├── chap06-spring-data-jpa/   # Spring Boot 서버
+│   ├── src/
+│   ├── sql/
+│   ├── gradle/
+│   ├── build.gradle
+│   ├── settings.gradle
+│   ├── gradlew / gradlew.bat
+│   └── api-docs.json
+├── menu-app/                # React 프론트엔드
+│   ├── src/
+│   ├── design/
+│   └── package.json
+├── README.md
+├── .env.example
+└── *_PRACTICE.md            # 기능별 학습 기록
+```
+
+서버와 프론트는 같은 단계의 독립된 폴더입니다. 아래 실행 명령은 저장소 루트를 기준으로 설명합니다.
 
 ## 개발 환경
 
@@ -154,23 +177,24 @@ AI 기능은 카카오 로그인 후 사용할 수 있습니다. 결제는 테�
 
 처음 설치하는 **빈 DB**에 다음 SQL을 순서대로 적용하세요.
 
-1. `sql/00_01_CREATE_USER_DATABASE.sql`: 예시 비밀번호 `CHANGE_ME_DB_PASSWORD`를 본인이 정한 값으로 바꾸세요. 이 값이 `DB_PASSWORD`와 같아야 합니다. 이미 계정/DB가 있다면 생략합니다.
-2. `sql/00_02_DB_SCRIPT.sql`: 기본 테이블과 더미 메뉴를 만듭니다. **테이블을 삭제하고 다시 만들기 때문에 기존 데이터가 있는 DB에서는 실행하지 마세요.**
-3. `sql/00_03_ADD_MENU_IMAGE.sql`부터 `sql/00_07_ADD_MENU_AI.sql`까지 번호순으로 적용합니다. 이미 해당 테이블/컬럼이 있으면 적용 여부를 확인하고 생략합니다.
-4. `sql/00_08_FILL_MENU_AI_DATA.sql`: 기본 메뉴의 비어 있는 재료·설명을 채웁니다. 기존에 작성한 내용은 유지합니다.
+1. `chap06-spring-data-jpa/sql/00_01_CREATE_USER_DATABASE.sql`: 예시 비밀번호 `CHANGE_ME_DB_PASSWORD`를 본인이 정한 값으로 바꾸세요. 이 값이 `DB_PASSWORD`와 같아야 합니다. 이미 계정/DB가 있다면 생략합니다.
+2. `chap06-spring-data-jpa/sql/00_02_DB_SCRIPT.sql`: 기본 테이블과 더미 메뉴를 만듭니다. **테이블을 삭제하고 다시 만들기 때문에 기존 데이터가 있는 DB에서는 실행하지 마세요.**
+3. `chap06-spring-data-jpa/sql/00_03_ADD_MENU_IMAGE.sql`부터 `chap06-spring-data-jpa/sql/00_07_ADD_MENU_AI.sql`까지 번호순으로 적용합니다. 이미 해당 테이블/컬럼이 있으면 적용 여부를 확인하고 생략합니다.
+4. `chap06-spring-data-jpa/sql/00_08_FILL_MENU_AI_DATA.sql`: 기본 메뉴의 비어 있는 재료·설명을 채웁니다. 기존에 작성한 내용은 유지합니다.
 
 기존 프로젝트 DB에서는 초기화 SQL을 다시 실행하지 말고, 아직 적용하지 않은 변경 SQL만 실행하세요.
 실제 회원·주문·결제 데이터, DB 백업, 업로드 사진은 이 저장소에 포함하지 않습니다.
 
 ## 실행
 
-프로젝트 루트에서 서버를 실행합니다.
+저장소 루트에서 서버 폴더로 이동해 실행합니다. IntelliJ에서는 `chap06-spring-data-jpa`를 Gradle 프로젝트로 열면 됩니다.
 
 ```powershell
+cd chap06-spring-data-jpa
 .\gradlew.bat bootRun
 ```
 
-다른 터미널에서 프론트를 실행합니다.
+다른 터미널을 저장소 루트에서 열고 프론트를 실행합니다.
 
 ```powershell
 cd menu-app
@@ -180,13 +204,14 @@ npm run dev
 
 `http://localhost:5173/menus`에 접속하세요.
 API 문서는 서버 실행 후 `http://localhost:8080/swagger-ui.html`에서 확인합니다.
-macOS/Linux에서는 `chmod +x gradlew` 후 `./gradlew bootRun`을 사용합니다.
+macOS/Linux에서는 서버 폴더에서 `chmod +x gradlew` 후 `./gradlew bootRun`을 사용합니다.
 
 ## 확인
 
 ```powershell
+cd chap06-spring-data-jpa
 .\gradlew.bat test
-cd menu-app
+cd ../menu-app
 npm run lint
 npm run build
 ```
@@ -197,9 +222,8 @@ npm run build
 
 ## 폴더
 
-- `src/`: Spring 서버 및 테스트
+- `chap06-spring-data-jpa/`: Spring 서버 프로젝트 (Gradle, `src/`, `sql/`, API 명세)
 - `menu-app/`: React 프론트
-- `sql/`: DB 초기화, 변경, 더미 메뉴 재료·설명 SQL
 - `AI_PRACTICE.md`: AI 기능과 통신/검증 안내
 - `KAKAO_LOGIN_PRACTICE.md`, `KAKAOPAY_PRACTICE.md`: 인증·결제 안내
 

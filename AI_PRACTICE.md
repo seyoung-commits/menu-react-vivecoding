@@ -5,7 +5,9 @@ phase-3-2의 OpenAI 호출 코드와 WebSocket 설명/사진 기능을 chap06에
 
 ## 실행
 
-1. 이번 작업 환경의 menudb에는 두 컬럼을 이미 추가했다. 다른 기존 DB에는 sql/00_07_ADD_MENU_AI.sql을 한 번 적용한다. 이미 두 컬럼이 있으면 재실행하지 않는다.
+서버 명령은 `chap06-spring-data-jpa` 폴더에서, 프론트 명령은 같은 단계의 `menu-app` 폴더에서 실행한다.
+
+1. 이번 작업 환경의 menudb에는 두 컬럼을 이미 추가했다. 다른 기존 DB에는 chap06-spring-data-jpa/sql/00_07_ADD_MENU_AI.sql을 한 번 적용한다. 이미 두 컬럼이 있으면 재실행하지 않는다.
 2. DB_PASSWORD를 실제 MySQL 계정 비밀번호로 등록한다. IntelliJ의 기존 Chap06SpringDataJpaApplication 실행 설정으로 서버를 실행한다. 기존 KAKAO_REST_API_KEY, KAKAO_CLIENT_SECRET, KAKAO_SYNC_ENABLED, KAKAOPAY_SECRET_KEY 설정을 유지하고 OPENAI_API_KEY도 전달되어야 한다. 터미널에서 ./gradlew.bat bootRun을 실행하면 IntelliJ에만 저장된 환경변수는 자동으로 전달되지 않으므로 함께 설정해야 한다.
 3. menu-app에서 npm run dev. http://localhost:5173에 접속한다.
 4. 카카오 로그인 후 오른쪽 아래 AI 메뉴 추천을 사용한다.

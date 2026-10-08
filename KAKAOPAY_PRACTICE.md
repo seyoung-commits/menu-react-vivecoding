@@ -1,5 +1,7 @@
 # 카카오페이 연결 연습
 
+서버는 `chap06-spring-data-jpa/`, 프론트는 같은 단계의 `menu-app/`에 있다. 서버 실행·테스트는 서버 폴더에서 수행한다.
+
 현재 메뉴 사이트에서 테스트 결제를 시작하고, 카카오페이 인증 후 사이트의 결과 화면으로 돌아올 수 있다.
 테스트 CID는 TC0ONETIME이며 Secret key(dev)를 사용한다. 실제 청구가 발생하는 운영 결제 설정은 허용하지 않는다.
 
@@ -35,12 +37,12 @@ React가 보내는 값은 다음 두 개다.
 
 | 파일 | 역할 |
 | --- | --- |
-| [MenuPayment.jsx](/C:/myWs/04_spring/chap06-spring-data-jpa/menu-app/src/components/MenuPayment.jsx) | 수량 입력, 준비 요청, 결제 화면 이동 |
-| [payments.js](/C:/myWs/04_spring/chap06-spring-data-jpa/menu-app/src/api/payments.js) | React의 결제 관련 HTTP 요청 |
-| [PaymentResultPage.jsx](/C:/myWs/04_spring/chap06-spring-data-jpa/menu-app/src/pages/PaymentResultPage.jsx) | 서버가 확인한 결과 표시 |
-| [KakaoPayController.java](/C:/myWs/04_spring/chap06-spring-data-jpa/src/main/java/com/ohgiraffers/springdatajpa/controller/KakaoPayController.java) | 준비 요청·콜백·상태 조회 주소 |
-| [KakaoPayService.java](/C:/myWs/04_spring/chap06-spring-data-jpa/src/main/java/com/ohgiraffers/springdatajpa/service/KakaoPayService.java) | 가격 계산, 세션 저장, 승인 검증, 중복 승인 방지 |
-| [KakaoPayGateway.java](/C:/myWs/04_spring/chap06-spring-data-jpa/src/main/java/com/ohgiraffers/springdatajpa/service/KakaoPayGateway.java) | 카카오페이 서버에 ready·approve·order 요청 |
+| [MenuPayment.jsx](menu-app/src/components/MenuPayment.jsx) | 수량 입력, 준비 요청, 결제 화면 이동 |
+| [payments.js](menu-app/src/api/payments.js) | React의 결제 관련 HTTP 요청 |
+| [PaymentResultPage.jsx](menu-app/src/pages/PaymentResultPage.jsx) | 서버가 확인한 결과 표시 |
+| [KakaoPayController.java](chap06-spring-data-jpa/src/main/java/com/ohgiraffers/springdatajpa/controller/KakaoPayController.java) | 준비 요청·콜백·상태 조회 주소 |
+| [KakaoPayService.java](chap06-spring-data-jpa/src/main/java/com/ohgiraffers/springdatajpa/service/KakaoPayService.java) | 가격 계산, 세션 저장, 승인 검증, 중복 승인 방지 |
+| [KakaoPayGateway.java](chap06-spring-data-jpa/src/main/java/com/ohgiraffers/springdatajpa/service/KakaoPayGateway.java) | 카카오페이 서버에 ready·approve·order 요청 |
 
 ## 왜 세션 쿠키가 필요한가
 

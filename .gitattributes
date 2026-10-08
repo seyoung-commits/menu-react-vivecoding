@@ -1,3 +1,3 @@
-/gradlew text eol=lf
+/chap06-spring-data-jpa/gradlew text eol=lf
 *.bat text eol=crlf
 *.jar binary

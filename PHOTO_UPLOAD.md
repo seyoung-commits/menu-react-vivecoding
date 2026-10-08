@@ -1,6 +1,8 @@
 # 메뉴 사진 업로드 구현 설명
 
-프로젝트: C:/myWs/04_spring/chap06-spring-data-jpa
+서버는 `chap06-spring-data-jpa/`, 프론트는 같은 단계의 `menu-app/`에 있다. 서버 실행·테스트는 서버 폴더에서 수행한다.
+
+프로젝트: chap06-spring-data-jpa/
 
 ## 지금 할 수 있는 것
 
@@ -13,14 +15,14 @@
 
 ## 1. 사진 선택과 업로드는 다르다
 
-C:/myWs/04_spring/chap06-spring-data-jpa/menu-app/src/components/MenuPhotoField.jsx
+menu-app/src/components/MenuPhotoField.jsx
 
 파일 입력창에서 사진을 고르면 브라우저가 File 객체를 준다. File 객체에는 파일 내용, 이름, 크기, 종류가 들어 있다.
 URL.createObjectURL(file)은 이 파일을 브라우저에서 미리 볼 수 있는 임시 주소를 만든다. 이 시점에는 서버로 보내지 않는다.
 화면을 떠나거나 선택을 바꾸면 URL.revokeObjectURL로 임시 주소를 해제한다.
 선택된 파일은 부모 폼에 전달되고, 등록 또는 수정 버튼을 눌렀을 때 전송된다.
 
-C:/myWs/04_spring/chap06-spring-data-jpa/menu-app/src/components/MenuForm.jsx
+menu-app/src/components/MenuForm.jsx
 
 기존 이름·가격·카테고리 검증에 사진 오류 검사를 연결했다.
 정상 입력이면 기존 값에 imageFile을 추가하여 onSubmit으로 넘긴다.
@@ -28,7 +30,7 @@ C:/myWs/04_spring/chap06-spring-data-jpa/menu-app/src/components/MenuForm.jsx
 
 ## 2. 파일을 담는 상자는 FormData다
 
-C:/myWs/04_spring/chap06-spring-data-jpa/menu-app/src/api/menus.js
+menu-app/src/api/menus.js
 
 사진을 선택하지 않으면 기존처럼 JSON을 보낸다.
 사진이 있으면 FormData에 두 부분을 담는다.
@@ -42,14 +44,14 @@ C:/myWs/04_spring/chap06-spring-data-jpa/menu-app/src/api/menus.js
 menu 부분은 JSON 문자열을 application/json Blob으로 감싼다. 서버가 문자열이 아니라 메뉴 객체로 해석하도록 형식을 알려주는 것이다.
 boundary는 multipart의 각 부분을 구분하는 표시다. 브라우저가 자동으로 붙이므로 직접 작성하지 않는다.
 
-C:/myWs/04_spring/chap06-spring-data-jpa/menu-app/src/api/client.js
+menu-app/src/api/client.js
 
 기존에 모든 요청을 application/json으로 고정하던 헤더를 제거했다.
 axios가 실제 요청 본문에 맞게 JSON 또는 FormData를 처리하게 했다.
 
 ## 3. 같은 주소라도 요청 형식으로 구분한다
 
-C:/myWs/04_spring/chap06-spring-data-jpa/src/main/java/com/ohgiraffers/springdatajpa/controller/MenuController.java
+chap06-spring-data-jpa/src/main/java/com/ohgiraffers/springdatajpa/controller/MenuController.java
 
 등록 주소는 POST /api/menus, 수정 주소는 PUT /api/menus/{menuCode}다.
 각 주소에 JSON을 받는 메서드와 multipart를 받는 메서드가 있다. consumes 설정이 둘을 구분한다.
@@ -65,14 +67,14 @@ required = false이므로 사진이 없어도 요청할 수 있다.
 
 ## 4. 사진과 DB는 서로 다른 곳에 저장된다
 
-C:/myWs/04_spring/chap06-spring-data-jpa/src/main/java/com/ohgiraffers/springdatajpa/service/MenuImageStorage.java
+chap06-spring-data-jpa/src/main/java/com/ohgiraffers/springdatajpa/service/MenuImageStorage.java
 
 서버는 원래 파일명과 확장자를 그대로 믿지 않는다.
 실제 내용을 읽어 JPG/PNG인지, 파일 크기와 해상도가 제한 안인지 확인한다.
 검사한 이미지를 다시 인코딩하여 UUID로 만든 이름으로 저장한다.
 
 기본 저장 폴더:
-C:/myWs/04_spring/chap06-spring-data-jpa/uploads/menu-images
+chap06-spring-data-jpa/uploads/menu-images
 
 기본 경로는 서버 실행 폴더 기준 ./uploads/menu-images다.
 다른 실행 위치나 배포 환경에서는 MENU_UPLOAD_DIR 환경 변수로 영구 저장 위치를 지정할 수 있다.
@@ -81,22 +83,22 @@ C:/myWs/04_spring/chap06-spring-data-jpa/uploads/menu-images
 MySQL tbl_menu의 image_path에는 서버가 만든 파일명만 저장한다.
 사진 바이트 자체는 DB에 넣지 않는다.
 
-C:/myWs/04_spring/chap06-spring-data-jpa/src/main/java/com/ohgiraffers/springdatajpa/entity/Menu.java
+chap06-spring-data-jpa/src/main/java/com/ohgiraffers/springdatajpa/entity/Menu.java
 - DB의 image_path 컬럼과 연결되는 imagePath 필드를 추가했다.
 
-C:/myWs/04_spring/chap06-spring-data-jpa/src/main/java/com/ohgiraffers/springdatajpa/dto/MenuDTO.java
+chap06-spring-data-jpa/src/main/java/com/ohgiraffers/springdatajpa/dto/MenuDTO.java
 - 화면으로 돌려줄 imageUrl 필드를 추가했다.
 - 사진이 없으면 null이다.
 
 기존 DB에는 컬럼을 추가했고, 기존 메뉴 44개는 유지했다.
 새 DB를 별도로 준비한다면 초기 DB 구성 후 다음 변경 SQL을 한 번 적용한다:
-C:/myWs/04_spring/chap06-spring-data-jpa/sql/00_03_ADD_MENU_IMAGE.sql
+chap06-spring-data-jpa/sql/00_03_ADD_MENU_IMAGE.sql
 
 현재 DB에 다시 실행할 필요는 없다. 기존 초기화 SQL을 재실행하면 데이터가 지워지므로 사진 컬럼을 추가할 때 사용하지 않는다.
 
 ## 5. DB 저장 실패 시 사진은 어떻게 되나
 
-C:/myWs/04_spring/chap06-spring-data-jpa/src/main/java/com/ohgiraffers/springdatajpa/service/MenuService.java
+chap06-spring-data-jpa/src/main/java/com/ohgiraffers/springdatajpa/service/MenuService.java
 
 DB 트랜잭션은 DB 변경만 되돌린다. 사진 파일을 자동으로 삭제해 주지는 않는다.
 따라서 MenuImageStorage가 트랜잭션 결과에 맞춰 파일을 정리한다.
@@ -113,7 +115,7 @@ DB 트랜잭션은 DB 변경만 되돌린다. 사진 파일을 자동으로 삭�
 
 ## 6. 화면에 사진이 나타나는 과정
 
-C:/myWs/04_spring/chap06-spring-data-jpa/src/main/java/com/ohgiraffers/springdatajpa/controller/MenuImageController.java
+chap06-spring-data-jpa/src/main/java/com/ohgiraffers/springdatajpa/controller/MenuImageController.java
 
 /api/menu-images/{filename} 요청에 이미지 파일을 반환한다.
 허용된 형태의 서버 생성 파일명만 조회하므로, 사용자가 임의의 시스템 파일 경로를 지정하지 못한다.
@@ -130,7 +132,7 @@ C:/myWs/04_spring/chap06-spring-data-jpa/src/main/java/com/ohgiraffers/springdat
 따라서 api/menus.js에서 공통 client의 baseURL을 기준으로 사진 주소를 완성한다.
 이렇게 하면 서버 주소를 여러 화면에 중복해서 적지 않아도 된다.
 
-C:/myWs/04_spring/chap06-spring-data-jpa/menu-app/src/components/MenuPhoto.jsx
+menu-app/src/components/MenuPhoto.jsx
 - 목록과 상세 화면에서 함께 사용하는 사진 컴포넌트다.
 - imageUrl이 있으면 img로 보여준다.
 - 사진이 없거나 읽을 수 없으면 기존 메뉴 이름 첫 글자 디자인을 보여준다.
@@ -146,7 +148,7 @@ C:/myWs/04_spring/chap06-spring-data-jpa/menu-app/src/components/MenuPhoto.jsx
 | 500 | ERROR_CODE_99999 | 처리되지 않은 저장 오류 |
 
 오류 메시지는 기존 ErrorResponse의 code, description, detail 구조를 유지한다.
-Swagger와 api-docs.json에도 JSON·multipart 요청 형식, 사진 필드, 오류 응답을 반영했다.
+Swagger와 chap06-spring-data-jpa/api-docs.json에도 JSON·multipart 요청 형식, 사진 필드, 오류 응답을 반영했다.
 
 ## 확인한 내용
 

@@ -1,7 +1,9 @@
 # 메뉴 관리 서비스 — 에이전트 지침
 
+서버는 `chap06-spring-data-jpa/`, 프론트는 같은 단계의 `menu-app/`에 있다. 서버 실행·테스트는 서버 폴더에서 수행한다.
+
 디자인 토큰으로 화면을 만들고, 데이터는 chap06 REST API 서버에서 가져온다.
-API 명세는 이 폴더의 `api-docs.json` 에 있고, React 앱은 `menu-app/` 에 있다.
+API 명세는 이 폴더의 `chap06-spring-data-jpa/api-docs.json` 에 있고, React 앱은 `menu-app/` 에 있다.
 
 ---
 
@@ -123,7 +125,7 @@ menu-app/src/
 - 새 사진을 보내지 않는 수정은 기존 사진을 유지한다.
 - IMAGE_INVALID는 400, 업로드 용량 제한 초과 IMAGE_TOO_LARGE는 413이다.
 - 사진 파일은 MENU_UPLOAD_DIR(기본 ./uploads/menu-images)에 보관한다. DB에는 서버가 생성한 파일명만 저장한다.
-- 기존 DB에는 sql/00_03_ADD_MENU_IMAGE.sql을 한 번 적용한다. 초기화 SQL을 재실행하지 않는다.
+- 기존 DB에는 chap06-spring-data-jpa/sql/00_03_ADD_MENU_IMAGE.sql을 한 번 적용한다. 초기화 SQL을 재실행하지 않는다.
 
 
 ### 2-6. AI 기능
@@ -134,5 +136,5 @@ menu-app/src/
 - 메뉴에 menuIngredients(최대 1000자), menuDescription(최대 2000자)가 추가됐다. null로 보낸 기존 수정 요청은 기존 값을 유지하고 빈 문자열은 지운다.
 - AI 사진은 선택한 File로 기존 multipart 업로드에 연결한다. 생성만으로 자동 저장하지 않는다.
 - API 키는 서버 환경변수 OPENAI_API_KEY에서만 읽는다. 프론트에 넣지 않는다.
-- 이번 작업의 로컬 menudb에는 sql/00_07_ADD_MENU_AI.sql의 두 컬럼을 이미 적용했다.
+- 이번 작업의 로컬 menudb에는 chap06-spring-data-jpa/sql/00_07_ADD_MENU_AI.sql의 두 컬럼을 이미 적용했다.
 - 일반 gradle test는 실제 OpenAI를 호출하지 않는다. 명시적 실제 API 검증은 AI_PRACTICE.md를 참고한다.

@@ -1,6 +1,6 @@
 # 카카오 로그인과 카카오싱크 학습 안내
 
-프로젝트: `C:/myWs/04_spring/chap06-spring-data-jpa`
+프로젝트: `chap06-spring-data-jpa/`
 
 ## 1. 지금 완성된 부분
 
@@ -36,7 +36,7 @@ IntelliJ 실행 환경변수를 테스트 앱 키로 교체하고 서버를 재�
 4. `/api/auth/me`가 `user.nickname`과 `user.profileImageUrl`을 React에 반환한다.
 5. 공통 `MemberAvatar`가 헤더, 로그인 결과, 내 정보에서 사진을 표시한다. 사진이 없거나 불러오지 못하면 닉네임 첫 글자를 표시한다.
 
-DB의 사진 컬럼은 `sql/00_05_ADD_MEMBER_PROFILE.sql`로 추가했으며 기존 회원과 약관, 메뉴 데이터는 유지했다. `카카오 사용자`는 동의하지 않았거나 카카오가 닉네임을 제공하지 않았을 때의 기본값이다. 화면에 쓰는 이름은 카카오 프로필 닉네임이며 별도 실명 항목인 `name`은 요청하지 않는다.
+DB의 사진 컬럼은 `chap06-spring-data-jpa/sql/00_05_ADD_MEMBER_PROFILE.sql`로 추가했으며 기존 회원과 약관, 메뉴 데이터는 유지했다. `카카오 사용자`는 동의하지 않았거나 카카오가 닉네임을 제공하지 않았을 때의 기본값이다. 화면에 쓰는 이름은 카카오 프로필 닉네임이며 별도 실명 항목인 `name`은 요청하지 않는다.
 
 코드 적용만으로 이미 저장된 기본 이름이 바뀌지는 않는다. 서버를 재시작하고 메뉴판에서 다시 로그인하여 닉네임·사진 제공에 동의하면 기존 회원의 프로필이 갱신된다. [카카오 공식 REST API 문서](https://developers.kakao.com/docs/ko/kakaologin/rest-api)
 
@@ -69,7 +69,7 @@ React가 “로그인 성공”이라고 표시하는 것만으로 로그인되�
 
 ## 3. 파일을 읽는 순서
 
-아래 Java 경로는 `src/main/java/com/ohgiraffers/springdatajpa/` 기준이다.
+아래 Java 경로는 `chap06-spring-data-jpa/src/main/java/com/ohgiraffers/springdatajpa/` 기준이다.
 
 | 파일 | 이해할 내용 |
 | --- | --- |
@@ -204,6 +204,6 @@ KAKAO_SYNC_REQUIRED_TERMS=menu_terms_20261005
 5. 내 정보 화면의 회원번호를 기억하고 로그아웃·재로그인한다. 같은 앱에서는 같은 회원번호이고 최근 로그인 시각만 갱신되는지 확인한다.
 6. 싱크 설정 후 `tbl_member_term`에서 실제 동의 태그·동의 시각을 확인한다.
 
-추가한 SQL은 `sql/00_04_ADD_KAKAO_MEMBER.sql`이며 현재 로컬 DB에는 이미 적용했다. 기존 DB를 유지하려면 전체 초기화 SQL을 다시 실행하지 않는다.
+추가한 SQL은 `chap06-spring-data-jpa/sql/00_04_ADD_KAKAO_MEMBER.sql`이며 현재 로컬 DB에는 이미 적용했다. 기존 DB를 유지하려면 전체 초기화 SQL을 다시 실행하지 않는다.
 
-테스트 명령은 프로젝트 폴더에서 `./gradlew.bat test`, React 폴더에서 `npm run lint`와 `npm run build`다. Java와 Node 환경이 설정되어 있어야 한다.
+테스트 명령은 서버 폴더 `chap06-spring-data-jpa`에서 `./gradlew.bat test`, React 폴더에서 `npm run lint`와 `npm run build`다. Java와 Node 환경이 설정되어 있어야 한다.

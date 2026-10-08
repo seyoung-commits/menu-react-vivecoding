@@ -1,5 +1,7 @@
 # 장바구니 구현 학습 가이드
 
+서버는 `chap06-spring-data-jpa/`, 프론트는 같은 단계의 `menu-app/`에 있다. 서버 실행·테스트는 서버 폴더에서 수행한다.
+
 ## 직접 사용해 보기
 
 1. 카카오로 로그인한다.
@@ -25,7 +27,7 @@
 
 `member_code + menu_code`는 중복될 수 없다. 같은 회원이 같은 메뉴를 두 번 담으면 기존 행의 수량을 더한다. 회원당 최대 50종까지 담을 수 있다. 로그아웃해도 DB 행은 남으므로 같은 계정으로 다시 로그인하면 복원된다. 메뉴를 삭제하면 외래 키의 `ON DELETE CASCADE`에 따라 그 메뉴의 장바구니 행도 삭제된다.
 
-새 테이블은 `sql/00_06_ADD_CART.sql`로 추가했다. 기존 메뉴·회원·결제 테이블을 초기화하지 않았다. 다른 PC에 옮길 때에도 이 추가 SQL만 적용하면 된다.
+새 테이블은 `chap06-spring-data-jpa/sql/00_06_ADD_CART.sql`로 추가했다. 기존 메뉴·회원·결제 테이블을 초기화하지 않았다. 다른 PC에 옮길 때에도 이 추가 SQL만 적용하면 된다.
 
 ## 2. 요청: 브라우저에서 서버까지
 
@@ -69,9 +71,9 @@ CartItemRepository → tbl_cart_item
 
 1. `menu-app/src/pages/CartPage.jsx`: 목록·입력·합계·버튼이 화면에 어떻게 나오는지 읽는다.
 2. `menu-app/src/api/cart.js`: 클릭이 어떤 HTTP 요청이 되는지 읽는다.
-3. `src/main/java/com/ohgiraffers/springdatajpa/controller/CartController.java`: 로그인 회원과 CSRF 검사 위치를 찾는다.
-4. `src/main/java/com/ohgiraffers/springdatajpa/service/CartService.java`: `add`, `update`, `remove`, `checkout`, `completePurchase`를 순서대로 읽는다.
-5. `src/main/java/com/ohgiraffers/springdatajpa/entity/CartItem.java`와 `repository/CartItemRepository.java`: DB 저장과 조건부 삭제를 확인한다.
+3. `chap06-spring-data-jpa/src/main/java/com/ohgiraffers/springdatajpa/controller/CartController.java`: 로그인 회원과 CSRF 검사 위치를 찾는다.
+4. `chap06-spring-data-jpa/src/main/java/com/ohgiraffers/springdatajpa/service/CartService.java`: `add`, `update`, `remove`, `checkout`, `completePurchase`를 순서대로 읽는다.
+5. `chap06-spring-data-jpa/src/main/java/com/ohgiraffers/springdatajpa/entity/CartItem.java`와 `repository/CartItemRepository.java`: DB 저장과 조건부 삭제를 확인한다.
 6. `service/KakaoPayService.java`: `readyCart`와 `finishCart`가 기존 결제 흐름에 연결되는 부분을 읽는다.
 
 `@Transactional`은 여러 DB 작업을 하나의 작업 단위로 묶는다. 중간에 실패하면 변경을 되돌린다. 회원 행을 잠그는 이유는 여러 탭에서 동시에 같은 메뉴를 담아도 수량이나 중복 행이 꼬이지 않게 하기 위해서다. `@Version`은 장바구니 행이 결제 준비 이후 바뀌었는지 구별하는 데 사용한다.

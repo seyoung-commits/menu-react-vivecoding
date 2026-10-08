@@ -9,7 +9,7 @@ REST API 서버(명세 완료) + 디자인 토큰 JSON 이 있을 때, **토큰 
 
 ```
 지금 작업 폴더는 {서버 프로젝트 경로} 야.
-- API 명세: {api-docs.json 경로} (springdoc 으로 뽑은 것)
+- API 명세: {chap06-spring-data-jpa/api-docs.json 경로} (springdoc 으로 뽑은 것)
 - 서버: {http://localhost:8080} 에 떠 있음
 - 디자인 토큰: {이전 실습의 design/montage.tokens.json 경로}
 - 토큰 → CSS 변환 스크립트: {scripts/build-tokens.mjs 경로}
@@ -57,7 +57,7 @@ API 까지는 끝났고 디자인부터 해줘. 먼저 위 파일들과 서버 �
   모서리는 --radius-* (용도별로 몇 번을 쓰는지 정해서 적어줘), tokens.css 는 생성물이라 직접 수정 금지
 - 확인: npm run lint, npm run build, 그리고 브라우저
 
-2층 서버 통신 규칙 ({api-docs.json} 과 서버 코드를 읽고 채워줘):
+2층 서버 통신 규칙 ({chap06-spring-data-jpa/api-docs.json} 과 서버 코드를 읽고 채워줘):
 - 서버 주소와 baseURL 위치, CORS 허용 포트
 - 요청 주소 조립 방식, 페이지 번호 기준
 - 정상/오류 응답 템플릿과 컴포넌트가 템플릿을 모르게 하는 규칙
